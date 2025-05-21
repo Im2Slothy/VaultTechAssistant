@@ -1,49 +1,75 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-Tec Assistant</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="index.css">
-</head>
+    <title>Vault-Tec Assistant - Fallout Discord Bot</title>
+    <link rel="icon" type="image/png" href="favicon.png"> <link rel="stylesheet" href="index.css"> </head>
 <body>
     <header>
         <h1>Vault-Tec Assistant</h1>
-        <p>First Fallout Styled Discord Bot with Minigames from Fallout!</p>
+        <p>Your Essential Fallout-Styled Companion for Discord!</p>
     </header>
 
     <main>
-        <section>
-            <h2>Welcome to the Vault</h2>
-            <p>Vault-Tec Assistant brings a slice of the wasteland to your Discord server — complete with Diamond City Radio, Radio New Vegas, and a fully playable terminal hacking game.</p>
-            <p><a href="https://Im2Slothy.com" target="_blank">If you like this bot, check out my other bots or just visit my website</a>!</p>            <a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite to Discord</a>
-            <a class="button" href="https://discord.gg/mwgwWNcKVs" target="_blank">Join Support Server</a>
+        <section class="intro">
+            <h2>Welcome to the Wasteland, Dweller!</h2>
+            <p>The Vault-Tec Assistant is here to bring a rich slice of the Fallout universe directly to your Discord server. Get ready for an immersive experience with minigames, iconic radio stations, a full in-game economy, and much more!</p>
+            <p>Whether you're a seasoned wasteland wanderer or a fresh vault escapee, there's something here for you.</p>
+            <div class="action-buttons">
+                <a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite to Your Server</a>
+                <a class="button" href="https://discord.gg/mwgwWNcKVs" target="_blank">Join Support Server</a>
+            </div>
+            <p style="margin-top: 15px;"><a href="https://Im2Slothy.com" target="_blank">Like this bot? Check out my other projects!</a></p>
+        </section>
+
+        <section class="features">
+            <h2>Key Features:</h2>
+            <ul>
+                <li>☢️ **Terminal Hacking Minigame:** Test your skills against ROBCO Industries' finest security. Use Mentats for an extra edge!</li>
+                <li>📻 **Fallout Radio:** Tune into Diamond City Radio or Radio New Vegas in your voice channel. 24/7 wasteland tunes!</li>
+                <li>💰 **Wasteland Economy:** Earn Bottlecaps, claim daily allowances, and try your luck at the Atomic Slots Machine!</li>
+                <li>🎒 **Inventory & Shop:** Scavenge or buy essential wasteland gear like Stimpaks, RadAway, Rad-X, and even Power Armor. Use items to gain advantages or heal up.</li>
+                <li>💊 **Status Effects:** Manage your radiation levels, get temporary buffs from items like Mentats and Rad-X, and feel the protection of Power Armor.</li>
+                <li>🏆 **Collectibles & Profile:** Find rare items like Vault Boy Bobbleheads and show off your stats and achievements with your personal `/profile`.</li>
+                <li>📊 **Leaderboards:** Compete with other survivors for the top spots in various categories!</li>
+            </ul>
         </section>
 
         <section class="demo">
-            <h2>See It in Action</h2>
-            <video src="inaction.mp4" controls></video>
+            <h2>See It in Action!</h2>
+            <video src="main.mp4" controls width="600">
+                Your browser does not support the video tag. 
+                </video>
         </section>
 
         <section class="commands">
-            <h2>Bot Commands</h2>
+            <h2>Primary Commands</h2>
+            <p>Here are some of the main commands to get you started (use <code>/help</code> in Discord for a full list):</p>
             <ul>
-                <li><strong>/terminal</strong> – Play the terminal hacking game</li>
-                <li><strong>/radio</strong> – Choose your radio station (You need to be in a VC that the bot can access)</li>
-                <li><strong>/help</strong> – Need a hand? This command lists everything!</li>
-                <li><strong>/stats</strong> – Get up to date information on the statistics of the bot</li>
+                <li><strong>/terminal</strong> – Initiate the terminal hacking minigame.</li>
+                <li><strong>/inventory</strong> – Check your Pip-Boy for all your gear.</li>
+                <li><strong>/shop</strong> – Browse and purchase items from the wasteland traders.</li>
+                <li><strong>/use `item_name`</strong> – Use an item from your inventory (e.g., <code>/use Stimpak</code>).</li>
+                <li><strong>/profile</strong> – View your survivor stats, active effects, and collectibles.</li>
+                <li><strong>/balance</strong> – Check your Bottlecap balance and basic stats.</li>
+                <li><strong>/daily</strong> – Claim your daily Bottlecap allowance.</li>
+                <li><strong>/slots</strong> – Try your luck at the Atomic Slots!</li>
+                <li><strong>/radio `station_name`</strong> – Join a radio station in your current voice channel.</li>
+                <li><strong>/radio_stats</strong> – Get info on current radio broadcasts.</li>
+                <li><strong>/leaderboard `category`</strong> – See who's topping the charts.</li>
+                <li><strong>/help</strong> – Displays all available commands and their descriptions.</li>
             </ul>
         </section>
 
         <section class="easteregg">
-            🕵️ Did you know? You can hear 24/7 Fallout radio in your Discord voice channel — just ask the bot with <code>/radio</code>.
+            <p>🕵️ <strong>Wasteland Wisdom:</strong> Keep an eye on your radiation! Too much can be... unhealthy. Luckily, RadAway and Stimpaks are usually available at the local shop. And remember, Mentats might just give you the edge you need when hacking those tricky terminals!</p>
         </section>
 
-        <section>
-            <h2>Legal</h2>
+        <section class="legal-footer">
+            <h2>Legal Information</h2>
             <p><a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a></p>
+            <p style="font-size: 0.8em; margin-top: 10px;">Vault-Tec Assistant is a fan-made project and is not affiliated with, endorsed, sponsored, or specifically approved by Bethesda Softworks LLC. Fallout® and Vault-Tec® are trademarks or registered trademarks of ZeniMax Media Inc. or its affiliates in the U.S. and/or other countries.</p>
         </section>
     </main>
 </body>

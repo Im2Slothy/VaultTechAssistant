@@ -2,26 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Vault-Tec Assistant</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.css"> <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #ccc; background-color: #121212; }
+        header { background-color: #1a1a1a; color: #00ff00; padding: 1em 0; text-align: center; border-bottom: 2px solid #00ff00;}
+        main { max-width: 800px; margin: 20px auto; padding: 20px; background-color: #222; border-radius: 8px; box-shadow: 0 0 10px rgba(0,255,0,0.2); }
+        h1, h2 { color: #00dd00; }
+        a { color: #00ff00; }
+        .legal-content p, .legal-content li { margin-bottom: 1em; }
+        .home-link { display: block; text-align: center; margin-top: 20px; }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> May 20, 2025</p>
+        <p>For Vault-Tec Assistant Discord Bot</p>
+    </header>
 
-        <p>
-            Vault-Tec Assistant does not collect or store personal user data. We do not use cookies or trackers.
-        </p>
-        <p>
-            Some temporary information (such as Discord user IDs or server IDs) may be stored in memory while using games or audio features, but this data is not saved or shared.
-        </p>
-        <p>
-            For support or data-related questions, join our <a href="https://discord.gg/mwgwWNcKVs">Discord Server</a>.
-        </p>
-        <footer>
-            <a href="index.html">Back to Home</a>
-        </footer>
-    </div>
+    <main class="legal-content">
+        <p><strong>Last Updated: May 20, 2025</strong></p>
+
+        <h2>1. Introduction</h2>
+        <p>This Privacy Policy outlines how Vault-Tec Assistant ("Bot," "we," "us," or "our") collects, uses, and protects your information when you interact with the Bot on Discord. We are committed to protecting your privacy.</p>
+
+        <h2>2. Information We Collect</h2>
+        <p>When you use the Bot, we may collect and store the following types of information:</p>
+        <ul>
+            <li><strong>Discord User ID:</strong> Your unique Discord identifier is stored to associate game progress, inventory, settings, and other Bot-related data with your account.</li>
+            <li><strong>Discord Username/Display Name:</strong> We may store your username or display name for features like leaderboards or personalized messages. This is obtained from Discord and updated periodically.</li>
+            <li><strong>Server (Guild) ID:</strong> We may store the ID of the Discord server where the Bot is used if there are server-specific settings or data. (Currently, most data is user-specific).</li>
+            <li><strong>Game Data:</strong> This includes your in-game bottlecap balance, inventory items (item IDs, quantities, and item-specific attributes like for Mentats or Rad-X effects), terminal game statistics (wins, losses, best times), slot machine wins, radiation levels, and active status effects (e.g., Mentats, Rad-X, and their expiry times). This data is stored in a local SQLite database file (`fallout_data.db`).</li>
+            <li><strong>Command Usage:</strong> We may (or may not currently) log commands used with the Bot for analytical purposes, such as identifying popular features or troubleshooting errors. This data, if collected, would be used in an aggregated and anonymized form where possible.</li>
+        </ul>
+        <p>We do not knowingly collect or solicit personally identifiable information beyond what Discord provides and what is necessary for the Bot's functionality.</p>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>The information collected is used to:</p>
+        <ul>
+            <li>Provide, maintain, and improve the Bot's features and functionality.</li>
+            <li>Save your progress in games and manage your in-game economy (bottlecaps, inventory).</li>
+            <li>Store and apply status effects from items (e.g., Mentats, Rad-X).</li>
+            <li>Display leaderboards and user profiles.</li>
+            <li>Personalize your experience with the Bot.</li>
+            <li>Troubleshoot issues and provide support.</li>
+        </ul>
+
+        <h2>4. Data Storage and Security</h2>
+        <p>All user-specific data, such as your User ID, game progress, inventory, and attributes, is stored in a local SQLite database file (`fallout_data.db`) on the server where the Bot is hosted. We take reasonable measures to protect the data stored, but no system is 100% secure. Do not share sensitive personal information with the Bot.</p>
+
+        <h2>5. Data Sharing</h2>
+        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your data is used solely for the operation of the Bot. Aggregated or anonymized usage data may be used for analytical purposes by the Bot developer(s).</p>
+        <p>Your Discord username and game scores may be visible to other users on public leaderboards generated by the Bot.</p>
+
+        <h2>6. User Rights and Data Retention</h2>
+        <p>You have the right to request the deletion of your personal data associated with the Bot. To do so, please contact the Bot developer(s) through the official support server. Upon request, we will make reasonable efforts to delete your data from our active database, unless retention is required by law or for legitimate operational purposes (e.g., preventing abuse).</p>
+        <p>We retain your data as long as you continue to use the Bot or until you request its deletion. Data for inactive users may be periodically pruned.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>The Bot is not intended for use by children under the age of 13 (or the relevant age of consent in your jurisdiction). We do not knowingly collect personal information from children under this age. If we become aware that a child under this age has provided us with personal information, we will take steps to delete such information.</p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time. We will notify users of significant changes where feasible (e.g., via a support server announcement or bot update message). Your continued use of the Bot after such changes constitutes your acceptance of the new Privacy Policy.</p>
+
+        <h2>9. Contact Information</h2>
+        <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us through the official support server for the Vault-Tec Assistant (link available on the Bot's main webpage or via a help command).</p>
+
+        <p class="home-link"><a href="index.html">Return to Main Page</a></p>
+    </main>
 </body>
 </html>
