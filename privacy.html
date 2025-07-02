@@ -22,42 +22,48 @@
     </header>
 
     <main class="legal-content">
-        <p><strong>Last Updated: May 20, 2025</strong></p>
+        <p><strong>Last Updated: July 1, 2025</strong></p>
 
         <h2>1. Introduction</h2>
         <p>This Privacy Policy outlines how Vault-Tec Assistant ("Bot," "we," "us," or "our") collects, uses, and protects your information when you interact with the Bot on Discord. We are committed to protecting your privacy.</p>
 
         <h2>2. Information We Collect</h2>
-        <p>When you use the Bot, we may collect and store the following types of information:</p>
+        <p>When you use the Bot, we collect and store the following types of information necessary for its features to function:</p>
         <ul>
-            <li><strong>Discord User ID:</strong> Your unique Discord identifier is stored to associate game progress, inventory, settings, and other Bot-related data with your account.</li>
-            <li><strong>Discord Username/Display Name:</strong> We may store your username or display name for features like leaderboards or personalized messages. This is obtained from Discord and updated periodically.</li>
-            <li><strong>Server (Guild) ID:</strong> We may store the ID of the Discord server where the Bot is used if there are server-specific settings or data. (Currently, most data is user-specific).</li>
-            <li><strong>Game Data:</strong> This includes your in-game bottlecap balance, inventory items (item IDs, quantities, and item-specific attributes like for Mentats or Rad-X effects), terminal game statistics (wins, losses, best times), slot machine wins, radiation levels, and active status effects (e.g., Mentats, Rad-X, and their expiry times). This data is stored in a local SQLite database file (`fallout_data.db`).</li>
-            <li><strong>Command Usage:</strong> We may (or may not currently) log commands used with the Bot for analytical purposes, such as identifying popular features or troubleshooting errors. This data, if collected, would be used in an aggregated and anonymized form where possible.</li>
+            <li><strong>Discord User Information:</strong> Your unique Discord User ID is the primary key for all your data. We also store your public Discord username/display name for features like leaderboards and personalized messages.</li>
+            <li><strong>Core Game Data:</strong> This includes your bottlecap balance, health, radiation level, inventory (item IDs, quantities), equipped power armor and weapons, and minigame statistics (wins, losses, best times).</li>
+            <li><strong>Cooldown Timestamps:</strong> We store timestamps for time-gated activities like `/daily` and `/scavenge` to manage cooldowns.</li>
+            <li><strong>Status Effects & Attributes:</strong> We store data on active effects from items (like Jet or Rad-X) and their expiration times.</li>
+            <li><strong>Expedition Data:</strong> For the expedition feature, we store the start time, end time, total duration, and a log of events that occurred during your dweller's journey.</li>
+            <li><strong>User Preferences:</strong> We store your preference for profile visibility (public or private) as set by the `/profile_privacy` command.</li>
+            <li><strong>Command Usage and Logs:</strong> We may log command usage for analytics and troubleshooting. Additionally, successful trade transactions made with the `/trade` command are logged in a public channel in the official support server, showing the participants and items exchanged for transparency and security.</li>
         </ul>
-        <p>We do not knowingly collect or solicit personally identifiable information beyond what Discord provides and what is necessary for the Bot's functionality.</p>
+        <p>All data is stored in a local SQLite database file (`fallout_data.db`) on the server where the Bot is hosted. We do not knowingly collect or solicit any other personally identifiable information.</p>
 
         <h2>3. How We Use Your Information</h2>
-        <p>The information collected is used to:</p>
+        <p>The information collected is used exclusively to:</p>
         <ul>
             <li>Provide, maintain, and improve the Bot's features and functionality.</li>
-            <li>Save your progress in games and manage your in-game economy (bottlecaps, inventory).</li>
-            <li>Store and apply status effects from items (e.g., Mentats, Rad-X).</li>
-            <li>Display leaderboards and user profiles.</li>
-            <li>Personalize your experience with the Bot.</li>
-            <li>Troubleshoot issues and provide support.</li>
+            <li>Save your progress in games and manage your in-game economy (bottlecaps, inventory, expeditions).</li>
+            <li>Enforce game cooldowns and manage temporary status effects.</li>
+            <li>Control the visibility of your profile to other users based on your privacy setting.</li>
+            <li>Display public leaderboards and PRIVATE trade logs in the case of scams and such or issues.</li>
+            <li>Personalize your experience and troubleshoot issues.</li>
         </ul>
 
         <h2>4. Data Storage and Security</h2>
-        <p>All user-specific data, such as your User ID, game progress, inventory, and attributes, is stored in a local SQLite database file (`fallout_data.db`) on the server where the Bot is hosted. We take reasonable measures to protect the data stored, but no system is 100% secure. Do not share sensitive personal information with the Bot.</p>
+        <p>All user-specific data is stored in a local SQLite database file on the server where the Bot is hosted. We take reasonable measures to protect this data, but no system is 100% secure. Do not share sensitive personal information with the Bot.</p>
 
-        <h2>5. Data Sharing</h2>
-        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your data is used solely for the operation of the Bot. Aggregated or anonymized usage data may be used for analytical purposes by the Bot developer(s).</p>
-        <p>Your Discord username and game scores may be visible to other users on public leaderboards generated by the Bot.</p>
+        <h2>5. Data Sharing and Visibility</h2>
+        <p>We do not sell, trade, or otherwise transfer your personally identifiable information to outside parties. Your data is used solely for the operation of the Bot. However, certain data is made visible to other users as part of the Bot's features:</p>
+        <ul>
+            <li>Your Discord username and game scores are visible on public leaderboards.</li>
+            <li>If you set your profile to public using `/profile_privacy`, other users will be able to view your stats, equipped gear, and notable inventory items using the `/view_profile` command. By default, profiles are private.</li>
+            <li>Trade transactions made using `/trade` are posted in a PRIVATE log channel in the support server. These logs include the Discord usernames of the trading parties and the contents of the trade.</li>
+        </ul>
 
         <h2>6. User Rights and Data Retention</h2>
-        <p>You have the right to request the deletion of your personal data associated with the Bot. To do so, please contact the Bot developer(s) through the official support server. Upon request, we will make reasonable efforts to delete your data from our active database, unless retention is required by law or for legitimate operational purposes (e.g., preventing abuse).</p>
+        <p>You have the right to request the deletion of your personal data associated with the Bot. To do so, please contact the Bot developer(s) through the official support server. Upon request, we will make reasonable efforts to delete your data from our active database, unless retention is required for legitimate operational purposes (e.g., preventing abuse).</p>
         <p>We retain your data as long as you continue to use the Bot or until you request its deletion. Data for inactive users may be periodically pruned.</p>
 
         <h2>7. Children's Privacy</h2>
