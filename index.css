@@ -1,150 +1,65 @@
+/* --- GLOBAL RESET & THEME --- */
 body {
     font-family: "Courier New", Courier, monospace;
     background-color: #0d0d0d;
-    color: #00FF41;
+    color: #00FF41; /* Fallout Green */
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #1a1a1a;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 3px solid #00FF41;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+    letter-spacing: 0.5px;
 }
 
 main {
     padding: 20px;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 section {
     margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #003300; /* Darker green separator */
+}
+
+h1, h2, h3 {
+    color: #00FF41;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #004400;
+    padding-bottom: 5px;
 }
 
 a {
-    color: #00FF41;
+    color: #FFC107; /* Vault Gold */
     text-decoration: underline;
+    transition: color 0.2s;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #00FF41;
-    color: #0d0d0d;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-weight: bold;
+a:hover {
+    color: #ffe082;
 }
 
-ul {
+ul, ol {
     padding-left: 20px;
-}
-
-.easteregg {
-    font-style: italic;
-    color: #8aff8a;
-    background: #222;
-    padding: 10px;
-    border-left: 4px solid #00FF41;
-    margin-top: 30px;
+    line-height: 1.6;
 }
 
 video, img {
     max-width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-
-.gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 0 10px;
-}
-
-.gallery-item {
-    background-color: #2a2a2a;
-    border: 1px solid #004400; /* Adjusted to a darker green to match theme */
-    border-radius: 8px;
-    padding: 15px;
-    width: calc(33.333% - 40px); 
-    min-width: 280px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    text-align: center;
-    transition: transform 0.3s ease;
-    display: flex; /* Added for better alignment of caption */
-    flex-direction: column; /* Added for better alignment of caption */
-    justify-content: space-between; /* Added for better alignment of caption */
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-/* Styling for the link wrapping the image */
-.gallery-item a {
-    display: block; /* Makes the link area cover the image properly */
-    text-decoration: none; /* Removes underline from the link */
-    cursor: pointer; /* Changes cursor to pointer on hover over the link */
-}
-
-.gallery-item img {
-    max-width: 100%;
     height: auto;
-    border-radius: 4px;
-    border: 1px solid #003300; /* Adjusted to a darker green */
-    margin-bottom: 10px;
-    display: block; /* Remove extra space below image if it's inline */
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 1px solid #003300;
 }
 
-.gallery-item p {
-    font-size: 0.9em;
-    color: #bbbbbb;
-    margin-top: auto; /* Pushes caption to the bottom if image heights vary */
-    padding-top: 5px; /* Add some space above caption */
-}
-
-.gallery-note {
-    text-align: center;
-    font-style: italic;
-    color: #8aff8a; /* Existing color from your .easteregg style */
-    margin-top: 20px; /* Space above the note */
-    font-size: 0.9em;
-}
-
-
-/* Responsive adjustments for the gallery */
-@media (max-width: 900px) {
-    .gallery-item {
-        width: calc(50% - 30px);
-    }
-}
-
-@media (max-width: 600px) {
-    .gallery-item {
-        width: calc(100% - 20px); 
-    }
-}
-
-/* Ensure other styles from your provided index.css are maintained */
-body {
-    font-family: "Courier New", Courier, monospace;
-    background-color: #0d0d0d;
-    color: #00FF41;
-    margin: 0;
-    padding: 0;
-}
-
+/* --- HEADER & NAVIGATION --- */
 header {
     background-color: #1a1a1a;
     padding: 20px;
@@ -152,121 +67,211 @@ header {
     border-bottom: 3px solid #00FF41;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+header p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin: 5px 0 15px 0;
 }
 
-main {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-/* General link styling - ensure it doesn't add underlines to image links if not desired */
-a {
-    color: #00FF41;
-    /* text-decoration: underline; You might want to remove this generally or override for images */
-}
-a:not(.button) { /* Keep underline for non-button links if desired */
-    text-decoration: underline;
-}
-
-
+/* --- BUTTONS --- */
 .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #00FF41;
-    color: #0d0d0d;
-    text-decoration: none; /* Buttons shouldn't be underlined */
+    background-color: #2D9DFF; /* Vault Blue */
+    color: #FFFFFF;
+    text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
     font-weight: bold;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Added transition */
+    border: 2px solid #2D9DFF;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
+
 .button:hover {
-    background-color: #33ff66; /* Lighter green on hover */
-    color: #000000;
+    background-color: #5aaeff;
+    color: #ffffff;
+}
+
+/* Alternate button style (e.g., for support) */
+.button.button-alt {
+    background-color: transparent;
+    color: #FFC107; /* Vault Gold */
+    border-color: #FFC107;
+}
+
+.button.button-alt:hover {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: #ffe082;
 }
 
 
-ul {
-    padding-left: 20px;
-}
-
-.commands ul {
-    list-style-type: none; 
+/* --- FEATURES & COMMANDS LISTS --- */
+.features ul, .commands ul {
+    list-style-type: none;
     padding-left: 0;
 }
 
+.features li {
+    margin-bottom: 1em;
+    padding-left: 2em;
+    position: relative;
+}
+
+.features li::before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: #00FF41;
+}
+
 .commands li {
-    background-color: #1e1e1e; /* Slightly different from gallery item */
+    background-color: #1a1a1a;
     border: 1px solid #003300;
-    padding: 10px;
+    padding: 10px 15px;
     margin-bottom: 8px;
     border-radius: 4px;
 }
 
 .commands strong {
-    color: #00ff00; /* Your main green */
+    color: #00FF41; /* Main green */
 }
 
-.easteregg { /* Your existing style, looks good */
+
+/* --- GALLERY & STATS --- */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    background-color: #1a1a1a;
+    border: 1px solid #004400;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(50% - 40px); /* Two items per row on desktop */
+    min-width: 280px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 255, 65, 0.2);
+}
+
+.gallery-item a {
+    text-decoration: none;
+}
+
+.gallery-item img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.gallery-item p {
+    font-size: 0.9em;
+    color: #bbbbbb;
+    margin-top: auto;
+    padding-top: 10px;
+}
+
+.gallery-note {
+    text-align: center;
     font-style: italic;
     color: #8aff8a;
-    background: #222;
-    padding: 10px;
-    border-left: 4px solid #00FF41;
-    margin-top: 30px;
-}
-
-/* General video/img from your CSS - ensure it doesn't conflict */
-video, img { /* This is a very broad selector, specific gallery img style is better */
-    /* max-width: 100%; Already in .gallery-item img */
-    border-radius: 10px; /* This will apply to all images, including gallery ones */
-    margin-top: 10px;
-}
-.demo video { /* More specific style for demo video */
-    max-width: 100%;
-    border: 2px solid #005500; /* Your demo video border */
-    border-radius: 8px; /* Your demo video radius */
-}
-
-
-.features ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-.features li {
-    margin-bottom: 0.5em;
-    padding-left: 1.5em;
-    position: relative;
-}
-.features li::before { /* Custom bullet points */
-    content: "▶"; /* Or any other character/emoji */
-    position: absolute;
-    left: 0;
-    color: #00FF41; /* Fallout green for bullets */
-}
-
-.legal-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #003300; /* Match darker green tones */
+    margin-top: 20px;
     font-size: 0.9em;
 }
 
-.legal-footer a {
+/* --- LIVE STATS SECTION --- */
+.live-stats h3 {
+    color: #FFC107; /* Gold for stats headings */
+}
+.live-stats ul, .live-stats ol {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    color: #bbbbbb;
+}
+.live-stats li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+/* --- MISC & FOOTER --- */
+.easteregg {
+    font-style: italic;
+    color: #8aff8a;
+    background: #222;
+    padding: 15px;
+    border-left: 4px solid #00FF41;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border-top: 1px solid #003300;
+    font-size: 0.9em;
+    color: #888;
+}
+
+.site-footer .legal-links {
+    margin-bottom: 15px;
+}
+
+.site-footer .legal-links a {
     margin: 0 10px;
 }
 
-.action-buttons { /* For centering invite/support buttons */
+.site-footer .disclaimer {
+    font-size: 0.8em;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* --- LEGAL PAGES (TERMS/PRIVACY) --- */
+.legal-content {
+    background-color: #1a1a1a;
+    border: 1px solid #003300;
+    padding: 20px 30px;
+    border-radius: 8px;
+    color: #ccc;
+    line-height: 1.7;
+}
+.legal-content h1, .legal-content h2 {
+    color: #00FF41;
+    border-bottom: 1px solid #004400;
+    padding-bottom: 5px;
+}
+.legal-content a {
+    color: #FFC107;
+}
+.home-link {
     text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(100% - 40px);
+    }
 }
