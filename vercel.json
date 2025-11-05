@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/stats",
+      "destination": "http://falloutbot.duckdns.org:5000/api/stats"
+    }
+  ]
+}
