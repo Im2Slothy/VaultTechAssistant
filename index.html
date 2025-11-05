@@ -110,6 +110,28 @@
             </ul>
         </section>
 
+        <section class="gallery">
+                <h2>Live Bot Statistics</h2>
+                <div class="gallery-container" id="stats-container">
+        
+                    <div class="gallery-item">
+                        <h3 style="margin-bottom: 15px;">Most Popular Commands</h3>
+                        <ul id="popular-commands-list" style="list-style: none; padding-left: 0; text-align: left; color: #bbbbbb;">
+                            <li id="loading-commands">Connecting to the Wasteland...</li>
+                        </ul>
+                    </div>
+        
+                    <div class="gallery-item">
+                        <h3 style="margin-bottom: 15px;">Radio Station Popularity</h3>
+                        <ol id="station-popularity-list" style="list-style-position: inside; padding-left: 0; text-align: left; color: #bbbbbb;">
+                            <li id="loading-radio">Tuning the frequencies...</li>
+                        </ol>
+                    </div>
+        
+                </div>
+                <p class="gallery-note">*Stats are updated live from the bot's database.</p>
+            </section>
+        
         <section class="easteregg">
             <p>🕵️ <strong>Wasteland Wisdom:</strong> Always check your corners and never trust a smoothskin offering a "once in a lifetime" deal. A pile of seemingly useless junk might just be the components for your next handful of life-saving Bobby Pins. A well-placed bet on a fast Radroach can make your day!</p>
         </section>
@@ -120,5 +142,56 @@
             <p style="font-size: 0.8em; margin-top: 10px;">Vault-Tec Assistant is a fan-made project and is not affiliated with, endorsed, sponsored, or specifically approved by Bethesda Softworks LLC. Fallout® and Vault-Tec® are trademarks or registered trademarks of ZeniMax Media Inc. or its affiliates in the U.S. and/or other countries.</p>
         </section>
     </main>
+<script>
+    const API_URL = "http://falloutbot.duckdns.org:5000/api/stats"; 
+
+    async function fetchStats() {
+        const commandsList = document.getElementById('popular-commands-list');
+        const radioList = document.getElementById('station-popularity-list');
+        const loadingCommands = document.getElementById('loading-commands');
+        const loadingRadio = document.getElementById('loading-radio');
+
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) {
+                throw new Error(`Network error: ${response.statusText}`);
+            }
+
+            const stats = await response.json();
+
+            // --- 1. Populate Popular Commands ---
+            if (stats.popular_commands && stats.popular_commands.length > 0) {
+                commandsList.innerHTML = ''; // Clear "loading"
+                stats.popular_commands.forEach(command => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<b>/${command.command_name}</b>: ${command.usage_count} uses`;
+                    commandsList.appendChild(li);
+                });
+            } else {
+                loadingCommands.textContent = 'No command data yet.';
+            }
+
+            // --- 2. Populate Radio Stats ---
+            if (stats.station_popularity && stats.station_popularity.length > 0) {
+                radioList.innerHTML = ''; // Clear "loading"
+                stats.station_popularity.forEach(station => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<b>${station.station_name}</b>: ${station.listen_time_str}`;
+                    radioList.appendChild(li);
+                });
+            } else {
+                loadingRadio.textContent = 'No radio data yet.';
+            }
+
+        } catch (error) {
+            console.error("Failed to fetch stats:", error);
+            if (loadingCommands) loadingCommands.textContent = "Error: API is offline.";
+            if (loadingRadio) loadingRadio.textContent = "Error: API is offline.";
+        }
+    }
+
+    // Run the function when the page loads
+    document.addEventListener('DOMContentLoaded', fetchStats);
+</script>
 </body>
 </html>
