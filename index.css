@@ -128,6 +128,22 @@ header p {
     box-shadow: 0 0 20px rgba(255, 193, 7, 0.8);
 }
 
+/* --- KO-FI BUTTON --- */
+.button.button-kofi {
+    border-color: #ff5e5b; /* Ko-fi Red */
+    color: #ff5e5b;
+    background-color: transparent;
+    font-size: 0.9rem; /* Slightly smaller than main buttons */
+    padding: 15px 20px;
+}
+
+.button.button-kofi:hover {
+    background-color: #ff5e5b;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 94, 91, 0.6);
+    border-bottom: 2px solid #ff5e5b;
+}
+
 /* --- IMAGE CAROUSEL --- */
 .carousel-container {
     margin-top: 20px;
