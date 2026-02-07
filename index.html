@@ -3,181 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-Tec Assistant - Fallout Discord Bot</title>
+    <title>Vault-Tec Assistant | The Ultimate Fallout Discord Bot</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header>
         <h1>Vault-Tec Assistant</h1>
-        <p>Your Essential Fallout-Styled Companion for Discord!</p>
+        <p>System Status: ONLINE</p>
+        <p><strong>The Wasteland is lonely. Turn on the Radio.</strong></p>
         <nav class="main-nav">
-            <a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite to Server</a>
-            <a class="button button-alt" href="https://discord.gg/RQBhmWEzTx" target="_blank">Join Support Server</a>
+            <a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite Bot</a>
+            <a class="button button-alt" href="https://discord.gg/RQBhmWEzTx" target="_blank">Support Server</a>
         </nav>
     </header>
 
     <main>
-        <section class="intro">
-            <h2>Welcome to the Wasteland, Dweller!</h2>
-            <p>The Vault-Tec Assistant is here to bring a rich slice of the Fallout universe directly to your Discord server. Get ready for an immersive, persistent experience with minigames, iconic radio stations, a full in-game economy, and now... player-run settlements!</p>
-            <p>Whether you're a seasoned wasteland wanderer or a fresh vault escapee, there's something here for you.</p>
-        </section>
-
         <section class="live-stats">
-            <h2>Live Bot Statistics</h2>
-            <div class="gallery-container" id="stats-container">
-                <div class="gallery-item">
-                    <h3 style="margin-bottom: 15px;">Most Popular Commands</h3>
-                    <ul id="popular-commands-list">
-                        <li id="loading-commands">Connecting to the Wasteland...</li>
-                    </ul>
-                </div>
-    
-                <div class="gallery-item">
-                    <h3 style="margin-bottom: 15px;">Radio Station Popularity</h3>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h4>>> Top Frequencies</h4>
                     <ol id="station-popularity-list">
-                        <li id="loading-radio">Tuning the frequencies...</li>
+                        <li id="loading-radio">Scanning Airwaves...</li>
                     </ol>
                 </div>
+                <div class="stat-box">
+                    <h4>>> Most Used Systems</h4>
+                    <ul id="popular-commands-list">
+                        <li id="loading-commands">Accessing Data...</li>
+                    </ul>
+                </div>
             </div>
-            <p class="gallery-note">*Stats are updated live from the bot's database via API.</p>
+        </section>
+
+        <section class="features">
+            <h2>📻 24/7 Wasteland Radio</h2>
+            <p>The most popular feature on the server. Bring the iconic atmosphere of Fallout to your voice channels with a single command.</p>
+            <ul>
+                <li><strong>All Your Favorites:</strong> Diamond City Radio, Radio New Vegas, Appalachia Radio, and Classical.</li>
+                <li><strong>No Downtime:</strong> The bot streams high-quality audio directly to your channel.</li>
+                <li><strong>Simple Control:</strong> Just type <code>/radio [station]</code> to start listening.</li>
+            </ul>
+            
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/radio_main.png" alt="Radio Interface">
+                    <div class="carousel-caption">Seamless Voice Channel Integration</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/radio_stats.png" alt="Radio Stats">
+                    <div class="carousel-caption">Live Station Statistics</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>🎒 Wasteland Expeditions</h2>
+            <p>Don't have time to grind? Play like <em>Fallout Shelter</em>. Send your dweller out into the unknown and check back later to see what they found.</p>
+            <ul>
+                <li><strong>Set It & Forget It:</strong> Send your dweller out for anywhere from <strong>1 hour to 168 hours (1 Week)</strong>.</li>
+                <li><strong>Real-Time Simulation:</strong> While you are away, your dweller encounters enemies, finds loot, and explores landmarks.</li>
+                <li><strong>Massive Rewards:</strong> The longer they stay out, the better the loot—if they survive.</li>
+            </ul>
+
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/expedition_start.png" alt="Starting an Expedition">
+                    <div class="carousel-caption">Choose your duration (up to 168 hours)</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/expedition_log.png" alt="Expedition Log">
+                    <div class="carousel-caption">Read your Dweller's journey log</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/expedition_loot.png" alt="Expedition Loot">
+                    <div class="carousel-caption">Collect rare weapons and caps</div>
+                </div>
+            </div>
         </section>
         
         <section class="features">
-            <h2>Key Features</h2>
+            <h2>🏗️ Build Your Settlement</h2>
+            <p>Found a settlement, grow your population, and manage your resources. It’s a full management game inside Discord.</p>
             <ul>
-                <li>🏕️ **Build Your Settlement:** Found your own settlement with `/settlement create`! Manage resources, build & upgrade structures, and grow your population. Defend against raiders and compete on the settlement leaderboards.</li>
-                <li>⚔️ **PVE & Boss Battles:** Fight wasteland creatures with `/pve_encounter` or launch a nuke with `/nukelaunch start` to battle legendary bosses like the Scorchbeast Queen for rare loot.</li>
-                <li>🏪 **Player Vending:** Set up your own shop with `/vending manage` to sell your items to other players. Browse all active player shops with `/browse_shops`.</li>
-                <li>🤝 **Player-to-Player Trading:** Use the secure `/trade` command to exchange items and caps directly with other survivors.</li>
-                <li>🤖 **Gear & Pet System:** Find, craft, and equip a huge variety of weapons and Power Armor. Tame wasteland creatures like Deathclaws or Radstags to follow you as pets!</li>
-                <li>☢️ **Terminal & Lockpicking:** Test your skills against ROBCO terminals with `/terminal` or use bobby pins to crack locks with `/lockpick`.</li>
-                <li>🎲 **Wasteland Gambling:** From `/slots` and `/roulette` to `/blackjack` and `/radroach_race`, there are plenty of ways to win (or lose) a fortune.</li>
-                <li>📻 **24/7 Fallout Radio:** Tune into Diamond City Radio, Radio New Vegas, Galaxy News Radio, and more with the `/radio` command.</li>
-                <li>🎒 **Full Economy:** Scavenge, craft, sell, and manage your inventory. Use chems like Jet for buffs, and collect rare bobbleheads.</li>
-                <li>🏆 **Profiles & Leaderboards:** Show off your stats, active effects, equipped gear, pet, and settlement with your personal `/profile`.</li>
+                <li><strong>Resource Management:</strong> Balance Power, Water, and Food production to keep your happiness high.</li>
+                <li><strong>Passive Income:</strong> Use <code>/settlement collect</code> to harvest the resources your settlers produced while you were offline.</li>
+                <li><strong>Defense:</strong> Build defenses to protect your stockpile from raider attacks.</li>
             </ul>
-        </section>
 
-        <section class="gallery">
-            <h2>Glimpses from the Wasteland</h2>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <a href="images/minigames.png" target="_blank"><img src="images/minigames.png" alt="Terminal Hacking and other games"></a>
-                    <p>Engaging Minigames in Action!</p>
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/settlement_view.png" alt="Settlement Overview">
+                    <div class="carousel-caption">Manage population and happiness</div>
                 </div>
-                <div class="gallery-item">
-                    <a href="images/radexample.png" target="_blank"><img src="images/radexample.png" alt="Using RadAway"></a>
-                    <p>Curing Wasteland Radiation</p>
-                </div>
-                <div class="gallery-item">
-                    <a href="images/radio.png" target="_blank"><img src="images/radio.png" alt="Radio Statistics"></a>
-                    <p>Tuning into Wasteland Radio</p>
-                </div>
-                <div class="gallery-item">
-                    <a href="images/shop.png" target="_blank"><img src="images/shop.png" alt="Item Shop"></a>
-                    <p>Shopping for Wasteland Essentials</p>
+                <div class="carousel-item">
+                    <img src="images/settlement_build.png" alt="Building Structures">
+                    <div class="carousel-caption">Construct Generators and much more</div>
                 </div>
             </div>
-            <p class="gallery-note">*All images are from the bot in action. Click an image to view the full version.</p>
         </section>
-        
-        <section class="demo">
-            <h2>See It in Action!</h2>
-            <video src="main.mp4" controls>
-                Your browser does not support the video tag. 
-            </video>
+
+        <section class="features danger-zone">
+            <h2>⚠️ Combat & Nuclear Launch</h2>
+            <p>The wasteland is dangerous. Fight for survival or become the danger yourself.</p>
+            <ul>
+                <li><strong>Fallout 76 Nuke Codes:</strong> Admins can use <code>/nukecodes set_channel</code> to create a pinned message that automatically updates with the real-world weekly codes for Alpha, Bravo, and Charlie silos.</li>
+                <li><strong>Wasteland Encounters:</strong> Fight Ghouls, Super Mutants, and Deathclaws for XP and loot.</li>
+                <li><strong>Nuke Silos:</strong> Hunt down keycards, decrypt the launch codes, and fire a nuke to trigger server-wide boss events.</li>
+                <li><strong>World Bosses:</strong> Defeat the Scorchbeast Queen or the Wendigo Colossus for endgame gear.</li>
+            </ul>
+
+            <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/nuke_codes.png" alt="Combat Encounter">
+                    <div class="carousel-caption">Fallout 76 Weekly Nuke Codes</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/nuke_launch.png" alt="Nuke Launch">
+                    <div class="carousel-caption">DEFCON 1: Launch Initiated</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/combat_boss.png" alt="Boss Fight">
+                    <div class="carousel-caption">Server-wide Boss Battles</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>🎲 Economy & Casino</h2>
+            <p>Trade with other players, set up your own vending machine shop, or gamble your caps away at the New Vegas Strip.</p>
+            <ul>
+                <li><strong>Global Market:</strong> <code>/browse_shops</code> to buy items from other real players across servers.</li>
+                <li><strong>Casino Games:</strong> Blackjack, Slots, Roulette, and Dice.</li>
+                <li><strong>Hacking Minigame:</strong> Solve the terminal logic puzzles to hack into locked safes.</li>
+            </ul>
+             <div class="carousel-container">
+                <div class="carousel-item">
+                    <img src="images/minigame_slots.png" alt="Slots">
+                    <div class="carousel-caption">Win big at the Atomic Wrangler</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="images/hacking.png" alt="Hacking">
+                    <div class="carousel-caption">Classic Terminal Hacking</div>
+                </div>
+            </div>
         </section>
 
         <section class="commands">
-            <h2>Primary Commands</h2>
-            <p>Here are some of the main commands to get you started (use <code>/help</code> in Discord for a full list):</p>
+            <h2>Quick Command Reference</h2>
             <ul>
-                <li><strong>/profile</strong> – View your survivor stats, pet, settlement, and active effects.</li>
-                <li><strong>/inventory</strong> – Check your Pip-Boy for all your gear.</li>
-                <li><strong>/power_armor</strong> – View, equip, and manage your Power Armor suits.</li>
-                <li><strong>/weapon</strong> – View, equip, and manage your arsenal of weapons.</li>
-                <li><strong>/scavenge</strong> – Search the wasteland for supplies and loot!</li>
-                <li><strong>/expedition start `hours`</strong> – Send your dweller into the wasteland to find loot.</li>
-                <li><strong>/settlement `sub-command`</strong> – Manage all aspects of your personal settlement.</li>
-                <li><strong>/pve_encounter `difficulty`</strong> – Fight random wasteland enemies.</li>
-                <li><strong>/nukelaunch start `location`</strong> – Launch a nuke to trigger a world boss event.</li>
-                <li><strong>/trade `recipient`</strong> – Securely trade items and caps with another survivor.</li>
-                <li><strong>/vending manage</strong> – Add or remove items from your personal shop.</li>
-                <li><strong>/browse_shops</strong> – See a list of all active player shops.</li>
-                <li><strong>/craft</strong> – Turn your collected junk into useful items.</li>
-                <li><strong>/sell</strong> – Sell your unwanted goods to wasteland traders for caps.</li>
-                <li><strong>/shop</strong> – Browse and purchase items from the bot's shop.</li>
-                <li><strong>/daily</strong> – Claim your daily Bottlecap allowance.</li>
-                <li><strong>/terminal</strong> – Initiate the terminal hacking minigame.</li>
-                <li><strong>/lockpick `difficulty`</strong> – Use a bobby pin to attempt to pick a lock.</li>
-                <li><strong>/blackjack `amount`</strong> – Play a hand of Blackjack.</li>
-                <li><strong>/slots</strong> – Try your luck at the Atomic Slots machine.</li>
-                <li><strong>/radio `station_name`</strong> – Join a radio station in your current voice channel.</li>
-                <li><strong>/leaderboard `category`</strong> – See who's topping the charts.</li>
+                <li><strong>/radio [station]</strong> <span>Start the music</span></li>
+                <li><strong>/expedition start [hours]</strong> <span>Send dweller to wasteland</span></li>
+                <li><strong>/settlement create</strong> <span>Found your base</span></li>
+                <li><strong>/settlement collect</strong> <span>Gather generated resources</span></li>
+                <li><strong>/profile</strong> <span>Check stats and caps</span></li>
+                <li><strong>/inventory</strong> <span>View your loot</span></li>
+                <li><strong>/nukelaunch</strong> <span>Endgame protocol</span></li>
+                <li><strong>/help</strong> <span>View all commands</span></li>
             </ul>
         </section>
         
         <section class="easteregg">
-            <p>🕵️ <strong>Wasteland Wisdom:</strong> Always check your corners. A pile of seemingly useless junk might just be the components for your next handful of life-saving Bobby Pins. A well-placed bet on a fast Radroach can make your day!</p>
+            <p><strong>OVERSEER'S TIP:</strong> Always make sure your settlement has enough water before you log off for the night. Thirsty settlers don't work.</p>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="legal-links">
-            <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a> | <a href="https://Im2Slothy.com" target="_blank">Developer's Website</a>
+            <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a>
         </div>
-        <p class="disclaimer">Vault-Tec Assistant is a fan-made project and is not affiliated with, endorsed, sponsored, or specifically approved by Bethesda Softworks LLC. Fallout® and Vault-Tec® are trademarks or registered trademarks of ZeniMax Media Inc. or its affiliates in the U.S. and/or other countries.</p>
+        <p class="disclaimer">Vault-Tec Assistant is a fan-made project. Fallout® and Vault-Tec® are trademarks of Bethesda Softworks LLC. This bot is not affiliated with Bethesda.</p>
     </footer>
 
-<script>
-    const API_URL = "/api/stats";
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Full Screen View">
+    </div>
 
-    async function fetchStats() {
-        const commandsList = document.getElementById('popular-commands-list');
-        const radioList = document.getElementById('station-popularity-list');
-        const loadingCommands = document.getElementById('loading-commands');
-        const loadingRadio = document.getElementById('loading-radio');
+    <script>
+        const API_URL = "/api/stats";
 
-        try {
-            const response = await fetch(API_URL);
-            if (!response.ok) {
-                throw new Error(`Network error: ${response.statusText}`);
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        // Add click event to all carousel images
+        document.querySelectorAll('.carousel-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src; // Set lightbox image to clicked image
+                lightbox.style.display = 'flex'; // Show lightbox
+            });
+        });
+
+        // Close lightbox when clicking anywhere on it
+        lightbox.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Stats Logic
+        async function fetchStats() {
+            const commandsList = document.getElementById('popular-commands-list');
+            const radioList = document.getElementById('station-popularity-list');
+
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error("API Offline");
+                const stats = await response.json();
+
+                if (stats.popular_commands && stats.popular_commands.length > 0) {
+                    commandsList.innerHTML = '';
+                    stats.popular_commands.forEach(c => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>/${c.command_name}</strong>: ${c.usage_count} uses`;
+                        commandsList.appendChild(li);
+                    });
+                }
+                if (stats.station_popularity && stats.station_popularity.length > 0) {
+                    radioList.innerHTML = '';
+                    stats.station_popularity.forEach(s => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${s.station_name}</strong>: ${s.listen_time_str}`;
+                        radioList.appendChild(li);
+                    });
+                }
+            } catch (error) {
+                console.log("Stats API currently unreachable or in dev mode.");
+                const loadCmd = document.getElementById('loading-commands');
+                const loadRad = document.getElementById('loading-radio');
+                if(loadCmd) loadCmd.innerText = ":: DATA LINK OFFLINE ::";
+                if(loadRad) loadRad.innerText = ":: SIGNAL LOST ::";
             }
-
-            const stats = await response.json();
-
-            if (stats.popular_commands && stats.popular_commands.length > 0) {
-                commandsList.innerHTML = ''; // Clear "loading"
-                stats.popular_commands.forEach(command => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<b>/${command.command_name}</b>: ${command.usage_count} uses`;
-                    commandsList.appendChild(li);
-                });
-            } else {
-                loadingCommands.textContent = 'No command data yet.';
-            }
-
-            if (stats.station_popularity && stats.station_popularity.length > 0) {
-                radioList.innerHTML = ''; // Clear "loading"
-                stats.station_popularity.forEach(station => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<b>${station.station_name}</b>: ${station.listen_time_str}`;
-                    radioList.appendChild(li);
-                });
-            } else {
-                loadingRadio.textContent = 'No radio data yet.';
-            }
-
-        } catch (error) {
-            console.error("Failed to fetch stats:", error);
-            if (loadingCommands) loadingCommands.textContent = "Error: API is offline.";
-            if (loadingRadio) loadingRadio.textContent = "Error: API is offline.";
         }
-    }
-
-    document.addEventListener('DOMContentLoaded', fetchStats);
-</script>
+        document.addEventListener('DOMContentLoaded', fetchStats);
+    </script>
 </body>
 </html>
