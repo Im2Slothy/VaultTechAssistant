@@ -1,0 +1,679 @@
+<!-- commands.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Wiki - Vault-Tec Assistant</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .wiki-intro {
+            background: #001100;
+            border: 1px solid #004400;
+            padding: 20px;
+        }
+
+        .wiki-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .wiki-nav a {
+            border: 1px solid #00FF41;
+            padding: 8px 12px;
+            color: #00FF41;
+            background: #001100;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .command-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: #080808;
+        }
+
+        .command-table th,
+        .command-table td {
+            border: 1px solid #004400;
+            padding: 12px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .command-table th {
+            color: #000;
+            background: #00FF41;
+            text-transform: uppercase;
+        }
+
+        .command-table code,
+        .command-pill {
+            color: #000;
+            background: #00FF41;
+            padding: 2px 6px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        .detail-box {
+            background: rgba(0, 50, 0, 0.2);
+            border-left: 3px solid #00FF41;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .warning-box {
+            background: rgba(50, 0, 0, 0.35);
+            border-left: 3px solid #ff3333;
+            padding: 16px;
+            margin: 16px 0;
+            color: #ffcccc;
+        }
+
+        .small-note {
+            color: #88ff88;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .command-table,
+            .command-table tbody,
+            .command-table tr,
+            .command-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .command-table thead {
+                display: none;
+            }
+
+            .command-table tr {
+                margin-bottom: 16px;
+                border: 1px solid #004400;
+            }
+
+            .command-table td {
+                border: none;
+                border-bottom: 1px solid #003300;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vault-Tec Assistant Command Wiki</h1>
+        <p>Operational Manual: Wasteland Systems</p>
+        <nav class="main-nav">
+            <a class="button" href="index.html">Home</a>
+            <a class="button button-alt" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite Bot</a>
+            <a class="button button-alt" href="https://discord.gg/RQBhmWEzTx" target="_blank">Support Server</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="wiki-intro">
+            <h2>Start Here</h2>
+            <p>This page explains the major Vault-Tec Assistant commands and how the game systems connect. Use Discord slash commands by typing <code>/</code> in your server and selecting the command from the menu.</p>
+            <p class="small-note">Some commands may have cooldowns, permission checks, or require you to be alive before using them.</p>
+
+            <div class="wiki-nav">
+                <a href="#basics">Basics</a>
+                <a href="#companions">Companions</a>
+                <a href="#expeditions">Expeditions</a>
+                <a href="#settlements">Settlements</a>
+                <a href="#combat">Combat</a>
+                <a href="#economy">Economy</a>
+                <a href="#inventory">Inventory</a>
+                <a href="#radio">Radio</a>
+                <a href="#minigames">Minigames</a>
+            </div>
+        </section>
+
+        <section id="basics" class="features">
+            <h2>Basics</h2>
+            <p>These commands are useful for checking your survivor, viewing progress, and getting started.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>How To Use It</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/profile</code></td>
+                        <td>Shows your survivor stats, health, radiation, caps, equipped gear, pet, companion, and settlement info.</td>
+                        <td>Use this when you want a full personal status check.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/profile_privacy</code></td>
+                        <td>Sets your profile to public or private.</td>
+                        <td>Private is useful if you do not want other players checking your build.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/view_profile</code></td>
+                        <td>Views another survivor's public profile.</td>
+                        <td>The target player must have public profile enabled.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/help</code></td>
+                        <td>Shows the bot's command list inside Discord.</td>
+                        <td>Good for checking exact command names quickly.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="companions" class="features">
+            <h2>Companions</h2>
+            <p>Companions are collectible followers. You can own many companions, but only one can be active at a time. Active companions provide passive bonuses and gain XP from gameplay.</p>
+
+            <div class="detail-box">
+                <h3>How To Get Companions</h3>
+                <ul>
+                    <li><strong>Rescue fights:</strong> Use <code>/rescue</code> to fight slavers and roll a hostage outcome.</li>
+                    <li><strong>Scavenging:</strong> <code>/scavenge</code> can occasionally find rescue signals.</li>
+                    <li><strong>Expeditions:</strong> Long expeditions can discover rescue signals while your dweller is away.</li>
+                    <li><strong>Settlement Radio Beacon:</strong> Build the beacon in your settlement. When the mayor uses <code>/settlement collect</code>, the beacon has a low chance to catch a rescue signal.</li>
+                </ul>
+            </div>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/companion collection</code></td>
+                        <td>Shows companions you own, their level, affinity, and bond tokens.</td>
+                        <td>Use this after recruiting a companion.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/companion equip</code></td>
+                        <td>Equips one owned companion as your active follower.</td>
+                        <td>Example: <code>/companion equip dogmeat</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>/companion codex</code></td>
+                        <td>Shows all currently available companions and their perks.</td>
+                        <td>Useful for deciding who to chase.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/rescue</code></td>
+                        <td>Starts a focused rescue battle with a rare companion chance.</td>
+                        <td>You fight 2-3 enemies first. Rewards roll after victory.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detail-box">
+                <h3>Rescue Outcome Odds</h3>
+                <ul>
+                    <li><strong>45%</strong> random wastelander: basic caps.</li>
+                    <li><strong>20%</strong> faction member: better caps and supplies.</li>
+                    <li><strong>20%</strong> hostile raider: trap outcome with combat-style rewards.</li>
+                    <li><strong>10%</strong> rare cache: useful item rewards.</li>
+                    <li><strong>5%</strong> companion: recruits a random companion.</li>
+                </ul>
+                <p>There is duplicate protection. If you roll a companion you already own, you get bond tokens and high-tier loot or caps instead.</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Current Companion Examples</h3>
+                <ul>
+                    <li><strong>Dogmeat:</strong> Better scavenging and expedition caps.</li>
+                    <li><strong>Boone:</strong> More combat damage.</li>
+                    <li><strong>Nick Valentine:</strong> Better rescue luck.</li>
+                    <li><strong>Curie:</strong> Better Stimpak healing.</li>
+                    <li><strong>Hancock:</strong> Combat damage and radiation resistance.</li>
+                    <li><strong>Piper:</strong> More companion XP gained.</li>
+                    <li><strong>Cait:</strong> Damage and resistance bonuses.</li>
+                    <li><strong>Paladin Danse:</strong> Strong damage resistance.</li>
+                    <li><strong>ED-E:</strong> Better rare expedition finds and beacon luck.</li>
+                    <li><strong>Deacon:</strong> Better flee chance and rescue luck.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="expeditions" class="features">
+            <h2>Expeditions</h2>
+            <p>Expeditions are long-running AFK adventures. Send your dweller into the wasteland, wait for the timer, then return to collect the log and rewards.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/expedition start</code></td>
+                        <td>Starts an expedition from 1 to 168 hours.</td>
+                        <td>Longer trips mean more event chances, but more danger.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/expedition status</code></td>
+                        <td>Shows the current expedition log and remaining time.</td>
+                        <td>Use this to check what happened while away.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/expedition return</code></td>
+                        <td>Collects completed expedition findings.</td>
+                        <td>You must return after completion before starting another expedition.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/expedition exit</code></td>
+                        <td>Recalls your dweller early.</td>
+                        <td>Returning early may reduce rewards or apply a penalty.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <strong>Survival Note:</strong> Expeditions can include enemies, radiation storms, loot finds, rare gear, and rescue signals. Heal up before leaving.
+            </div>
+        </section>
+
+        <section id="settlements" class="features">
+            <h2>Settlements</h2>
+            <p>Settlements let players create a base, build structures, generate resources, manage members, and improve passive income.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/settlement create</code></td>
+                        <td>Founds your settlement.</td>
+                        <td>You become the mayor.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement status</code></td>
+                        <td>Shows settlement resources, buildings, population, happiness, and power.</td>
+                        <td>Use this to check settlement health.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement manage</code></td>
+                        <td>Builds or upgrades settlement structures.</td>
+                        <td>Mayor and officers can use this.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement collect</code></td>
+                        <td>Collects generated settlement caps and scrap.</td>
+                        <td>If you have a Settlement Radio Beacon, this can also catch rescue signals.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement transfer</code></td>
+                        <td>Deposits resources into your settlement. Mayors can also withdraw.</td>
+                        <td>Useful for funding new buildings.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement join</code></td>
+                        <td>Joins another player's settlement by tag.</td>
+                        <td>Requires the settlement to be open.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement leave</code></td>
+                        <td>Leaves your current settlement.</td>
+                        <td>Mayors should disband instead if they own one.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement members</code></td>
+                        <td>Shows settlement members.</td>
+                        <td>Good for mayors and officers.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement leaderboard</code></td>
+                        <td>Shows top settlements.</td>
+                        <td>Rankings depend on settlement progress.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement accessibility</code></td>
+                        <td>Opens or closes the settlement to new members.</td>
+                        <td>Mayor or officer command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement promote</code></td>
+                        <td>Promotes a member to officer.</td>
+                        <td>Mayor only.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement demote</code></td>
+                        <td>Demotes an officer.</td>
+                        <td>Mayor only.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement kick</code></td>
+                        <td>Removes a member from the settlement.</td>
+                        <td>Mayor or officer command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement ban</code></td>
+                        <td>Bans a user from the settlement.</td>
+                        <td>Mayor or officer command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement unban</code></td>
+                        <td>Removes a settlement ban.</td>
+                        <td>Mayor or officer command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement checkbans</code></td>
+                        <td>Shows the settlement ban list.</td>
+                        <td>Mayor or officer command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement log</code></td>
+                        <td>Shows settlement activity logs.</td>
+                        <td>Mayor only.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement disband</code></td>
+                        <td>Permanently deletes your settlement.</td>
+                        <td>Mayor only. This is irreversible.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detail-box">
+                <h3>Settlement Radio Beacon</h3>
+                <p>The Settlement Radio Beacon is built through <code>/settlement manage</code>. Once built, the mayor's <code>/settlement collect</code> command can trigger a beacon sweep.</p>
+                <ul>
+                    <li>Base signal chance: <strong>12%</strong></li>
+                    <li>Each beacon level adds <strong>+3%</strong></li>
+                    <li>Chance caps at <strong>35%</strong></li>
+                    <li>Signal cooldown: <strong>12 hours</strong></li>
+                    <li>Successful signals roll rescue rewards and can rarely recruit companions.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="combat" class="features danger-zone">
+            <h2>Combat & Nuclear Events</h2>
+            <p>Combat commands are for active fights, boss events, and endgame rewards.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/pve_encounter</code></td>
+                        <td>Starts a PvE fight against wasteland enemies.</td>
+                        <td>Choose difficulty when prompted.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/rescue</code></td>
+                        <td>Starts a rescue battle against slavers or hostiles.</td>
+                        <td>Win the fight to roll rescue rewards.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nukelaunch</code></td>
+                        <td>Launches an endgame nuke event if requirements are met.</td>
+                        <td>Boss fights can reward high-tier loot and companion XP.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nukecodes set_channel</code></td>
+                        <td>Sets up Fallout 76 nuke code updates.</td>
+                        <td>Admin-style utility for code channels.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="economy" class="features">
+            <h2>Economy & Trading</h2>
+            <p>Earn caps, buy supplies, sell loot, trade with players, and run a vending machine.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/balance</code></td>
+                        <td>Checks your bottlecaps and basic stats.</td>
+                        <td>Quick economy status.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/daily</code></td>
+                        <td>Claims your daily bottlecap allowance.</td>
+                        <td>Use once per cooldown.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/shop</code></td>
+                        <td>Buys items from the Wasteland Trading Post.</td>
+                        <td>Good source of aid items.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/sell</code></td>
+                        <td>Sells unwanted inventory items for caps.</td>
+                        <td>Useful after scavenging or expeditions.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/trade</code></td>
+                        <td>Trades items and caps with another survivor.</td>
+                        <td>Both players confirm before completion.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/transfer</code></td>
+                        <td>Sends bottlecaps to another player.</td>
+                        <td>Use carefully. Transfers are direct.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/leaderboard</code></td>
+                        <td>Shows top survivors by category.</td>
+                        <td>Categories depend on tracked stats.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/browse_shops</code></td>
+                        <td>Browses active player vending machines.</td>
+                        <td>Use this to shop globally.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/vending manage</code></td>
+                        <td>Lists or removes items from your vending machine.</td>
+                        <td>You set prices and quantities.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/vending view</code></td>
+                        <td>Views a specific player's vending machine.</td>
+                        <td>Useful when shopping from friends.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="inventory" class="features">
+            <h2>Inventory & Items</h2>
+            <p>Your inventory stores aid, weapons, armor, junk, crafting materials, collectibles, and other loot.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/inventory</code></td>
+                        <td>Shows your Pip-Boy inventory.</td>
+                        <td>Use this to check what you own.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/weapon</code></td>
+                        <td>Views, equips, and manages weapons.</td>
+                        <td>Weapons increase combat damage.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/power_armor</code></td>
+                        <td>Views and equips power armor.</td>
+                        <td>Power armor helps with damage and radiation resistance.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/use</code></td>
+                        <td>Uses an item from your inventory.</td>
+                        <td>Examples include Stimpaks, RadAway, Jet, and Rad-X.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/craft</code></td>
+                        <td>Crafts useful items from junk materials.</td>
+                        <td>Break down junk first if needed.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/scrap</code></td>
+                        <td>Breaks junk items into scrap materials.</td>
+                        <td>Useful for crafting and settlement progress.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="radio" class="features">
+            <h2>Radio</h2>
+            <p>Radio commands bring Fallout-style atmosphere to your Discord voice channel.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/radio play</code></td>
+                        <td>Joins your voice channel and plays a selected radio station.</td>
+                        <td>Search the station name when using the command.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/radio stop</code></td>
+                        <td>Stops playback and disconnects from voice.</td>
+                        <td>Use when your server is done listening.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/radio stats</code></td>
+                        <td>Shows station status and listener stats.</td>
+                        <td>Useful for seeing popular stations.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="minigames" class="features">
+            <h2>Minigames & Casino</h2>
+            <p>These commands let you gamble caps, hack terminals, pick locks, and play quick games.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/terminal</code></td>
+                        <td>Starts a RobCo terminal hacking minigame.</td>
+                        <td>Has a cooldown.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/terminal_cancel</code></td>
+                        <td>Cancels your current terminal game.</td>
+                        <td>Use if you get stuck or need to stop.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/lockpick</code></td>
+                        <td>Uses bobby pins to pick a lock for rewards.</td>
+                        <td>Higher difficulty means higher risk and reward.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/slots</code></td>
+                        <td>Plays the Atomic Slots Machine.</td>
+                        <td>Casino game using bottlecaps.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/blackjack</code></td>
+                        <td>Plays Blackjack for caps.</td>
+                        <td>Enter your bet amount.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/roulette</code></td>
+                        <td>Plays Roulette.</td>
+                        <td>Bet per selected option.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/coinflip</code></td>
+                        <td>Bets caps on a coin flip.</td>
+                        <td>Choose your side and amount.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/rps</code></td>
+                        <td>Plays Rock Paper Scissors for caps.</td>
+                        <td>Choose rock, paper, or scissors.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/vault_code_guess</code></td>
+                        <td>Cracks a 3-digit Vault code.</td>
+                        <td>Bet caps to play.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/preserved_pie</code></td>
+                        <td>Attempts to win a Perfectly Preserved Pie.</td>
+                        <td>Rare collectible-style reward.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/radroach_race</code></td>
+                        <td>Starts a Radroach race for betting.</td>
+                        <td>Server casino event.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="easteregg">
+            <p><strong>OVERSEER'S TIP:</strong> If you are new, start with <code>/daily</code>, <code>/scavenge</code>, <code>/profile</code>, and <code>/inventory</code>. Once you have supplies, try <code>/expedition start</code> or <code>/settlement create</code>.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="legal-links">
+            <a href="index.html">Home</a> |
+            <a href="terms.html">Terms of Service</a> |
+            <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <p class="disclaimer">Vault-Tec Assistant is a fan-made project. Fallout&reg; and Vault-Tec&reg; are trademarks of Bethesda Softworks LLC. This bot is not affiliated with Bethesda.</p>
+    </footer>
+</body>
+</html>
