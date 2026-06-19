@@ -22,6 +22,7 @@
         }
 
         .wiki-nav a {
+            box-sizing: border-box;
             border: 1px solid #00FF41;
             padding: 8px 12px;
             color: #00FF41;
@@ -31,10 +32,15 @@
         }
 
         .command-table {
+            box-sizing: border-box;
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
             background: #080808;
+        }
+
+        .command-table * {
+            box-sizing: border-box;
         }
 
         .command-table th,
@@ -124,6 +130,8 @@
 
             <div class="wiki-nav">
                 <a href="#basics">Basics</a>
+                <a href="#fishing">Fishing</a>
+                <a href="#raids">Raids</a>
                 <a href="#companions">Companions</a>
                 <a href="#expeditions">Expeditions</a>
                 <a href="#settlements">Settlements</a>
@@ -172,9 +180,95 @@
             </table>
         </section>
 
+        <section id="fishing" class="features">
+            <h2>Fishing</h2>
+            <p>Fishing is a bait-and-button minigame for collecting Appalachia fish and junk catches. Fish do not automatically award Fish Bits when caught; clean your catches when you want Fish Bits.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/fish guide</code></td>
+                        <td>Shows bait inventory, bait tiers, weather rules, monthly axolotl notes, and fishing regions.</td>
+                        <td>Start here before buying bait or choosing a region.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/fish cast</code></td>
+                        <td>Consumes one bait, waits for a bite, then enables a Hook button for the caster.</td>
+                        <td>Successful catches go into your inventory as fish or junk. Missing the Hook timeout loses the bait.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/fish clean</code></td>
+                        <td>Turns caught fish from your inventory into Fish Bits.</td>
+                        <td>Use this after catching fish; Fish Bits are not granted automatically on catch.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detail-box">
+                <h3>Bait, Weather, and Regions</h3>
+                <ul>
+                    <li><strong>Common Fishing Bait:</strong> best for generic and common fish.</li>
+                    <li><strong>Improved Fishing Bait:</strong> improves uncommon, glowing, and axolotl chances.</li>
+                    <li><strong>Superb Fishing Bait:</strong> best rare odds and required for local legends.</li>
+                    <li><strong>Weather:</strong> Rain helps rare-feeling catches. Nuke weather unlocks glowing fish in matching regions. Rain and Nuke require the matching settlement Weather Control Station.</li>
+                    <li><strong>Regions:</strong> Forest, Toxic Valley, Ash Heap, Savage Divide, Mire, Cranberry Bog, Skyline Valley, Organ Cave, Big Maw, and Wavy Willard's Water Park.</li>
+                </ul>
+            </div>
+
+            <div class="detail-box">
+                <h3>Fish Bits and Cooking</h3>
+                <p>Cleaning fish yields Fish Bits by rarity: generic/common 1, uncommon 2, glowing 3, and axolotl/local legend 25. Fish Bits are usable Aid items that give a small HP heal with a small radiation gain. You can also craft Fish Bits into Grilled Fish, Fish and Tatos, and Fish Chowder for stronger food healing.</p>
+            </div>
+        </section>
+
+        <section id="raids" class="features danger-zone">
+            <h2>Raids</h2>
+            <p>Raids are staged group encounters. The first raid is Gleaming Depths, a five-stage Vulcan facility run that consumes key materials and rewards surviving players.</p>
+
+            <table class="command-table">
+                <thead>
+                    <tr>
+                        <th>Command</th>
+                        <th>What It Does</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>/raid status</code></td>
+                        <td>Shows each Gleaming Depths stage, your progress, stage costs, key rewards, and final clear cooldown.</td>
+                        <td>Use this before spending raid materials.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/raid start</code></td>
+                        <td>Starts a selected Gleaming Depths stage and opens a short lobby for other players to join.</td>
+                        <td>Only your next unlocked stage can be started. Materials are refunded if setup fails.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="detail-box">
+                <h3>Gleaming Depths Stage Matrix</h3>
+                <ul>
+                    <li><strong>Stage 1 - EN06 Guardian:</strong> costs 5 Ultracite Shards; rewards EN06 Circuitboard.</li>
+                    <li><strong>Stage 2 - Drill Defense:</strong> costs 8 Ultracite Shards + EN06 Circuitboard; rewards Drill Core.</li>
+                    <li><strong>Stage 3 - Epsilon Squad:</strong> costs 10 Ultracite Shards + Drill Core; rewards Epsilon Signet.</li>
+                    <li><strong>Stage 4 - Vulcan Lab:</strong> costs 12 Ultracite Shards + Epsilon Signet; rewards Vulcan Crystal.</li>
+                    <li><strong>Stage 5 - Ultracite Terror:</strong> costs 15 Ultracite Shards + Vulcan Crystal; final boss loot and a 2-hour leader cooldown.</li>
+                </ul>
+            </div>
+        </section>
+
         <section id="companions" class="features">
             <h2>Companions</h2>
-            <p>Companions are collectible followers. You can own many companions, but only one can be active at a time. Active companions provide passive bonuses and gain XP from gameplay.</p>
+            <p>Companions are collectible followers. You can own many companions, but only one can be active at a time. Active companions provide passive bonuses and gain XP from gameplay. Fisto is now part of the recruitable companion roster.</p>
 
             <div class="detail-box">
                 <h3>How To Get Companions</h3>
@@ -242,6 +336,7 @@
                     <li><strong>Cait:</strong> Damage and resistance bonuses.</li>
                     <li><strong>Paladin Danse:</strong> Strong damage resistance.</li>
                     <li><strong>ED-E:</strong> Better rare expedition finds and beacon luck.</li>
+                    <li><strong>Fisto:</strong> Combat damage, damage resistance, and extra rescue-cache junk at max affinity.</li>
                     <li><strong>Deacon:</strong> Better flee chance and rescue luck.</li>
                 </ul>
             </div>
@@ -310,6 +405,11 @@
                         <td><code>/settlement status</code></td>
                         <td>Shows settlement resources, buildings, population, happiness, and power.</td>
                         <td>Use this to check settlement health.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/settlement companion</code></td>
+                        <td>Assigns, removes, or checks the companion helping your settlement.</td>
+                        <td>Actions are assign, remove, and status. Mayor or officers can change it.</td>
                     </tr>
                     <tr>
                         <td><code>/settlement manage</code></td>
@@ -405,6 +505,23 @@
                     <li>Successful signals roll rescue rewards and can rarely recruit companions.</li>
                 </ul>
             </div>
+
+            <div class="detail-box">
+                <h3>Settlement Companion Perks</h3>
+                <p>A settlement can have one assigned companion at a time. Assigning a different companion replaces the previous one instead of stacking effects.</p>
+                <ul>
+                    <li><strong>Dogmeat:</strong> better settlement happenings and growth happiness.</li>
+                    <li><strong>Boone:</strong> +8 settlement defense.</li>
+                    <li><strong>Nick Valentine:</strong> better settlement caps income.</li>
+                    <li><strong>Curie:</strong> +3 max AI population.</li>
+                    <li><strong>Hancock:</strong> productive day events happen more often.</li>
+                    <li><strong>Piper:</strong> caravan encounters happen more often.</li>
+                    <li><strong>Cait:</strong> raider attacks are easier to repel.</li>
+                    <li><strong>Paladin Danse:</strong> faction and companion rescue signals are easier to find.</li>
+                    <li><strong>ED-E:</strong> better settlement scrap income.</li>
+                    <li><strong>Fisto:</strong> small settlement scrap income boost.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="combat" class="features danger-zone">
@@ -431,17 +548,27 @@
                         <td>Win the fight to roll rescue rewards.</td>
                     </tr>
                     <tr>
-                        <td><code>/nukelaunch</code></td>
+                        <td><code>/nukelaunch start</code></td>
                         <td>Launches an endgame nuke event if requirements are met.</td>
-                        <td>Boss fights can reward high-tier loot and companion XP.</td>
+                        <td>Targets include Scorchbeast Queen, Wendigo Colossus, Ultracite Titan, and Storm Goliaths at Hawksbill Weather Station.</td>
                     </tr>
                     <tr>
-                        <td><code>/nukecodes set_channel</code></td>
-                        <td>Sets up Fallout 76 nuke code updates.</td>
-                        <td>Admin-style utility for code channels.</td>
+                        <td><code>/nukelaunch codes</code></td>
+                        <td>Fetches the current nuclear launch codes.</td>
+                        <td>Use when you need the current Alpha, Bravo, and Charlie codes.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nukelaunch auto</code></td>
+                        <td>Sets up automatic nuke code updates in a selected channel.</td>
+                        <td>Administrator permission required.</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="detail-box">
+                <h3>Storm Goliaths</h3>
+                <p>Hawksbill Weather Station is a new nuke target. Storm Goliaths brings higher health, heavier damage, radiation pressure, and a Neurological Overload special attack without replacing the older nuke bosses.</p>
+            </div>
         </section>
 
         <section id="economy" class="features">
@@ -469,8 +596,8 @@
                     </tr>
                     <tr>
                         <td><code>/shop</code></td>
-                        <td>Buys items from the Wasteland Trading Post.</td>
-                        <td>Good source of aid items.</td>
+                        <td>Opens the categorized Wasteland Trading Post.</td>
+                        <td>Categories include Aid, Tools, Weapons, and Misc. Fishing bait appears under Tools.</td>
                     </tr>
                     <tr>
                         <td><code>/sell</code></td>
@@ -493,7 +620,7 @@
                         <td>Categories depend on tracked stats.</td>
                     </tr>
                     <tr>
-                        <td><code>/browse_shops</code></td>
+                        <td><code>/vending browse</code></td>
                         <td>Browses active player vending machines.</td>
                         <td>Use this to shop globally.</td>
                     </tr>
@@ -509,6 +636,7 @@
                     </tr>
                 </tbody>
             </table>
+
         </section>
 
         <section id="inventory" class="features">
@@ -556,6 +684,16 @@
                     </tr>
                 </tbody>
             </table>
+
+            <div class="detail-box">
+                <h3>New Item Families</h3>
+                <ul>
+                    <li><strong>Fishing bait:</strong> Common, Improved, and Superb Fishing Bait are bought through <code>/shop</code> and used by <code>/fish cast</code>.</li>
+                    <li><strong>Fish catches:</strong> Fish appear as collectibles and can be sold or cleaned with <code>/fish clean</code>. Catches do not automatically grant Fish Bits.</li>
+                    <li><strong>Fish Bits and meals:</strong> Fish Bits are usable Aid items with a small heal and small radiation gain. They are also crafting ingredients for Grilled Fish, Fish and Tatos, and Fish Chowder.</li>
+                    <li><strong>Raid keys:</strong> Ultracite Shards, EN06 Circuitboard, Drill Core, Epsilon Signet, and Vulcan Crystal are consumed by <code>/raid start</code>.</li>
+                </ul>
+            </div>
         </section>
 
         <section id="radio" class="features">

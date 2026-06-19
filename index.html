@@ -40,9 +40,11 @@
 
         <section class="commands">
             <h2>Command Wiki</h2>
-            <p>Need the full operating manual? The Command Wiki explains every major system, including companions, settlements, expeditions, radio, combat, economy, inventory, and minigames.</p>
+            <p>Need the full operating manual? The Command Wiki explains every major system, including fishing, raids, companions, settlements, expeditions, radio, combat, economy, inventory, and minigames.</p>
             <ul>
                 <li><strong>/profile</strong> <span>Check your survivor</span></li>
+                <li><strong>/fish guide</strong> <span>Learn bait, weather, and regions</span></li>
+                <li><strong>/raid status</strong> <span>Check Gleaming Depths progress</span></li>
                 <li><strong>/scavenge</strong> <span>Find supplies and rescue signals</span></li>
                 <li><strong>/rescue</strong> <span>Fight for rare companion chances</span></li>
                 <li><strong>/settlement collect</strong> <span>Collect resources and beacon signals</span></li>
@@ -98,11 +100,32 @@
 
         <section class="features">
             <h2>🐾 Companions & Rescue Signals</h2>
-            <p>Recruit iconic wasteland followers, level their affinity, and equip one active companion to help your survivor across combat, scavenging, expeditions, and settlements.</p>
+            <p>Recruit iconic wasteland followers, level their affinity, and equip one active companion to help your survivor across combat, scavenging, expeditions, and settlements. Fisto has joined the recruitable roster.</p>
             <ul>
                 <li><strong>Rescue Encounters:</strong> Use <code>/rescue</code> to fight off slavers and roll for survivors, loot, traps, or rare companions.</li>
+                <li><strong>Settlement Companion Slot:</strong> Use <code>/settlement companion</code> to assign, remove, or check the follower helping your settlement.</li>
                 <li><strong>Settlement Radio Beacon:</strong> Build a beacon, then use <code>/settlement collect</code> for a low chance to catch rescue signals.</li>
                 <li><strong>Progression:</strong> Companions gain XP and affinity from battles, expeditions, nuke events, and rescue outcomes.</li>
+            </ul>
+        </section>
+
+        <section class="features">
+            <h2>Fishing & Fish Bits</h2>
+            <p>Cast a line across Appalachia with bait tiers, regional catches, special weather, and a quick Hook-button minigame. Fish go into your inventory first; clean them when you want Fish Bits.</p>
+            <ul>
+                <li><strong>Learn the Waters:</strong> <code>/fish guide</code> shows your bait, weather rules, monthly axolotls, and available regions.</li>
+                <li><strong>Cast and Hook:</strong> <code>/fish cast</code> consumes Common, Improved, or Superb Fishing Bait, then asks you to hook the catch before it gets away.</li>
+                <li><strong>Clean and Cook:</strong> Use <code>/fish clean</code> to turn caught fish into Fish Bits. Eat Fish Bits for a small heal and small radiation gain, or craft Grilled Fish, Fish and Tatos, and Fish Chowder.</li>
+            </ul>
+        </section>
+
+        <section class="features danger-zone">
+            <h2>Gleaming Depths Raids</h2>
+            <p>Raid teams can breach the Vulcan facility in five gated stages, with key items unlocking each deeper sector.</p>
+            <ul>
+                <li><strong>Raid Status:</strong> <code>/raid status</code> lists your cleared stages, requirements, rewards, and final-stage cooldown.</li>
+                <li><strong>Stage Progression:</strong> <code>/raid start</code> covers EN06 Guardian, Drill Defense, Epsilon Squad, Vulcan Lab, and Ultracite Terror.</li>
+                <li><strong>Group Combat:</strong> Other players can join the lobby, surviving players earn rewards, and the Stage 5 leader cooldown is currently 2 hours.</li>
             </ul>
         </section>
         
@@ -132,10 +155,10 @@
             <h2>⚠️ Combat & Nuclear Launch</h2>
             <p>The wasteland is dangerous. Fight for survival or become the danger yourself.</p>
             <ul>
-                <li><strong>Fallout 76 Nuke Codes:</strong> Admins can use <code>/nukecodes set_channel</code> to create a pinned message that automatically updates with the real-world weekly codes for Alpha, Bravo, and Charlie silos.</li>
+                <li><strong>Fallout 76 Nuke Codes:</strong> Use <code>/nukelaunch codes</code> to fetch current codes, or <code>/nukelaunch auto</code> to set an admin-managed auto-update channel.</li>
                 <li><strong>Wasteland Encounters:</strong> Fight Ghouls, Super Mutants, and Deathclaws for XP and loot.</li>
-                <li><strong>Nuke Silos:</strong> Hunt down keycards, decrypt the launch codes, and fire a nuke to trigger server-wide boss events.</li>
-                <li><strong>World Bosses:</strong> Defeat the Scorchbeast Queen or the Wendigo Colossus for endgame gear.</li>
+                <li><strong>Nuke Silos:</strong> Hunt down keycards, decrypt the launch codes, and use <code>/nukelaunch start</code> to trigger server-wide boss events.</li>
+                <li><strong>World Bosses:</strong> Defeat the Scorchbeast Queen, Wendigo Colossus, Ultracite Titan, or the new Storm Goliaths at Hawksbill Weather Station for endgame gear.</li>
             </ul>
 
             <div class="carousel-container">
@@ -158,7 +181,7 @@
             <h2>🎲 Economy & Casino</h2>
             <p>Trade with other players, set up your own vending machine shop, or gamble your caps away at the New Vegas Strip.</p>
             <ul>
-                <li><strong>Global Market:</strong> <code>/browse_shops</code> to buy items from other real players across servers.</li>
+                <li><strong>Global Market:</strong> <code>/vending browse</code> to buy items from other real players across servers.</li>
                 <li><strong>Casino Games:</strong> Blackjack, Slots, Roulette, and Dice.</li>
                 <li><strong>Hacking Minigame:</strong> Solve the terminal logic puzzles to hack into locked safes.</li>
             </ul>
