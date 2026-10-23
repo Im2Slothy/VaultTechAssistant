@@ -1,279 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vault-Tec Assistant | The Ultimate Fallout Discord Bot</title>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="index.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#214f7b">
+<meta name="description" content="Vault-Tec Assistant brings Fallout radio, survivor gameplay, settlements, and an original Chicago campaign to your Discord server. Read the current bot handbook.">
+<meta property="og:title" content="Vault-Tec Assistant | Resident handbook"><meta property="og:description" content="Fallout radio, survivor life, and an original Chicago story for your Discord server."><meta property="og:type" content="website">
+<title>Vault-Tec Assistant | Resident handbook</title><link rel="icon" href="favicon.png" type="image/png"><link rel="preload" href="assets/assistant.webp" as="image"><link rel="stylesheet" href="assets/site.css"><script src="assets/site.js" defer></script>
 </head>
-<body>
-    <header>
-        <h1>Vault-Tec Assistant</h1>
-        <p>System Status: ONLINE</p>
-        <p><strong>The Wasteland is lonely. Turn on the Radio.</strong></p>
-        <nav class="main-nav">
-            <a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank">Invite Bot</a>
-            <a class="button button-alt" href="https://discord.gg/RQBhmWEzTx" target="_blank">Support Server</a>
-            <a class="button button-kofi" href="https://ko-fi.com/im2slothy" target="_blank">♥ Donate</a>
-            <a class="button button-alt" href="commands.html">Command Wiki</a>
-            <a class="button button-alt" href="story.html">Chicago Story Guide</a>
-            <a class="button button-alt" href="wiki.html">Chicago Story Wiki</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="live-stats">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <h4>>> Top Frequencies</h4>
-                    <ol id="station-popularity-list">
-                        <li id="loading-radio">Scanning Airwaves...</li>
-                    </ol>
-                </div>
-                <div class="stat-box">
-                    <h4>>> Most Used Systems</h4>
-                    <ul id="popular-commands-list">
-                        <li id="loading-commands">Accessing Data...</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="commands">
-            <h2>Command Wiki</h2>
-            <p>Need the full operating manual? The Command Wiki explains every major system, including fishing, raids, companions, settlements, expeditions, radio, combat, economy, inventory, and minigames.</p>
-            <ul>
-                <li><strong>/profile</strong> <span>Check your survivor</span></li>
-                <li><strong>/fish guide</strong> <span>Learn bait, weather, and regions</span></li>
-                <li><strong>/raid status</strong> <span>Check Gleaming Depths progress</span></li>
-                <li><strong>/scavenge</strong> <span>Find supplies and rescue signals</span></li>
-                <li><strong>/rescue</strong> <span>Fight for rare companion chances</span></li>
-                <li><strong>/settlement collect</strong> <span>Collect resources and beacon signals</span></li>
-            </ul>
-            <p><a class="button button-alt" href="commands.html">Open Command Wiki</a></p>
-        </section>
-
-        <section class="features">
-            <h2>📻 24/7 Wasteland Radio</h2>
-            <p>The most popular feature on the server. Bring the iconic atmosphere of Fallout to your voice channels with a single command.</p>
-            <ul>
-                <li><strong>All Your Favorites:</strong> Diamond City Radio, Radio New Vegas, Appalachia Radio, and Classical.</li>
-                <li><strong>No Downtime:</strong> The bot streams high-quality audio directly to your channel.</li>
-                <li><strong>Simple Control:</strong> Just type <code>/radio [station]</code> to start listening.</li>
-            </ul>
-            
-            <div class="carousel-container">
-                <div class="carousel-item">
-                    <img src="images/radio_main.png" alt="Radio Interface">
-                    <div class="carousel-caption">Seamless Voice Channel Integration</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/radio_stats.png" alt="Radio Stats">
-                    <div class="carousel-caption">Live Station Statistics</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <h2>🎒 Wasteland Expeditions</h2>
-            <p>Don't have time to grind? Play like <em>Fallout Shelter</em>. Send your dweller out into the unknown and check back later to see what they found.</p>
-            <ul>
-                <li><strong>Set It & Forget It:</strong> Send your dweller out for anywhere from <strong>1 hour to 168 hours (1 Week)</strong>.</li>
-                <li><strong>Real-Time Simulation:</strong> While you are away, your dweller encounters enemies, finds loot, and explores landmarks.</li>
-                <li><strong>Massive Rewards:</strong> The longer they stay out, the better the loot, if they survive.</li>
-            </ul>
-
-            <div class="carousel-container">
-                <div class="carousel-item">
-                    <img src="images/expedition_start.png" alt="Starting an Expedition">
-                    <div class="carousel-caption">Choose your duration (up to 168 hours)</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/expedition_log.png" alt="Expedition Log">
-                    <div class="carousel-caption">Read your Dweller's journey log</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/expedition_loot.png" alt="Expedition Loot">
-                    <div class="carousel-caption">Collect rare weapons and caps</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <h2>🐾 Companions & Rescue Signals</h2>
-            <p>Recruit iconic wasteland followers, level their affinity, and equip one active companion to help your survivor across combat, scavenging, expeditions, and settlements. Fisto has joined the recruitable roster.</p>
-            <ul>
-                <li><strong>Rescue Encounters:</strong> Use <code>/rescue</code> to fight off slavers and roll for survivors, loot, traps, or rare companions.</li>
-                <li><strong>Settlement Companion Slot:</strong> Use <code>/settlement companion</code> to assign, remove, or check the follower helping your settlement.</li>
-                <li><strong>Settlement Radio Beacon:</strong> Build a beacon, then use <code>/settlement collect</code> for a low chance to catch rescue signals.</li>
-                <li><strong>Progression:</strong> Companions gain XP and affinity from battles, expeditions, nuke events, and rescue outcomes.</li>
-            </ul>
-        </section>
-
-        <section class="features">
-            <h2>Fishing & Fish Bits</h2>
-            <p>Cast a line across Appalachia with bait tiers, regional catches, special weather, and a quick Hook-button minigame. Fish go into your inventory first; clean them when you want Fish Bits.</p>
-            <ul>
-                <li><strong>Learn the Waters:</strong> <code>/fish guide</code> shows your bait, weather rules, monthly axolotls, and available regions.</li>
-                <li><strong>Cast and Hook:</strong> <code>/fish cast</code> consumes Common, Improved, or Superb Fishing Bait, then asks you to hook the catch before it gets away.</li>
-                <li><strong>Clean and Cook:</strong> Use <code>/fish clean</code> to turn caught fish into Fish Bits. Eat Fish Bits for a small heal and small radiation gain, or craft Grilled Fish, Fish and Tatos, and Fish Chowder.</li>
-            </ul>
-        </section>
-
-        <section class="features danger-zone">
-            <h2>Gleaming Depths Raids</h2>
-            <p>Raid teams can breach the Vulcan facility in five gated stages, with key items unlocking each deeper sector.</p>
-            <ul>
-                <li><strong>Raid Status:</strong> <code>/raid status</code> lists your cleared stages, requirements, rewards, and final-stage cooldown.</li>
-                <li><strong>Stage Progression:</strong> <code>/raid start</code> covers EN06 Guardian, Drill Defense, Epsilon Squad, Vulcan Lab, and Ultracite Terror.</li>
-                <li><strong>Group Combat:</strong> Other players can join the lobby, surviving players earn rewards, and the Stage 5 leader cooldown is currently 2 hours.</li>
-            </ul>
-        </section>
-        
-        <section class="features">
-            <h2>🏗️ Build Your Settlement</h2>
-            <p>Found a settlement, grow your population, and manage your resources. It’s a full management game inside Discord.</p>
-            <ul>
-                <li><strong>Resource Management:</strong> Balance Power, Water, and Food production to keep your happiness high.</li>
-                <li><strong>Passive Income:</strong> Use <code>/settlement collect</code> to harvest the resources your settlers produced while you were offline.</li>
-                <li><strong>Radio Beacon:</strong> Catch rescue signals that can lead to supplies, faction survivors, or rare companions.</li>
-                <li><strong>Defense:</strong> Build defenses to protect your stockpile from raider attacks.</li>
-            </ul>
-
-            <div class="carousel-container">
-                <div class="carousel-item">
-                    <img src="images/settlement_view.png" alt="Settlement Overview">
-                    <div class="carousel-caption">Manage population and happiness</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/settlement_build.png" alt="Building Structures">
-                    <div class="carousel-caption">Construct Generators and much more</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features danger-zone">
-            <h2>⚠️ Combat & Nuclear Launch</h2>
-            <p>The wasteland is dangerous. Fight for survival or become the danger yourself.</p>
-            <ul>
-                <li><strong>Fallout 76 Nuke Codes:</strong> Use <code>/nukelaunch codes</code> to fetch current codes, or <code>/nukelaunch auto</code> to set an admin-managed auto-update channel.</li>
-                <li><strong>Wasteland Encounters:</strong> Fight Ghouls, Super Mutants, and Deathclaws for XP and loot.</li>
-                <li><strong>Nuke Silos:</strong> Hunt down keycards, decrypt the launch codes, and use <code>/nukelaunch start</code> to trigger server-wide boss events.</li>
-                <li><strong>World Bosses:</strong> Defeat the Scorchbeast Queen, Wendigo Colossus, Ultracite Titan, or the new Storm Goliaths at Hawksbill Weather Station for endgame gear.</li>
-            </ul>
-
-            <div class="carousel-container">
-                <div class="carousel-item">
-                    <img src="images/nuke_codes.png" alt="Combat Encounter">
-                    <div class="carousel-caption">Fallout 76 Weekly Nuke Codes</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/nuke_launch.png" alt="Nuke Launch">
-                    <div class="carousel-caption">DEFCON 1: Launch Initiated</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/combat_boss.png" alt="Boss Fight">
-                    <div class="carousel-caption">Server-wide Boss Battles</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="features">
-            <h2>🎲 Economy & Casino</h2>
-            <p>Trade with other players, set up your own vending machine shop, or gamble your caps away at the New Vegas Strip.</p>
-            <ul>
-                <li><strong>Global Market:</strong> <code>/vending browse</code> to buy items from other real players across servers.</li>
-                <li><strong>Casino Games:</strong> Blackjack, Slots, Roulette, and Dice.</li>
-                <li><strong>Hacking Minigame:</strong> Solve the terminal logic puzzles to hack into locked safes.</li>
-            </ul>
-             <div class="carousel-container">
-                <div class="carousel-item">
-                    <img src="images/vending_machine.png" alt="Vending Machine">
-                    <div class="carousel-caption">Buy and Sell with Player-Run Shops</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/minigame_slots.png" alt="Slots">
-                    <div class="carousel-caption">Win big at the Atomic Wrangler</div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/hacking.png" alt="Hacking">
-                    <div class="carousel-caption">Classic Terminal Hacking</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="easteregg">
-            <p><strong>OVERSEER'S TIP:</strong> Always make sure your settlement has enough water before you log off for the night. Thirsty settlers don't work.</p>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="legal-links">
-            <a href="commands.html">Command Wiki</a> | <a href="story.html">Chicago Story Guide</a> | <a href="terms.html">Terms of Service</a> | <a href="privacy.html">Privacy Policy</a>
-        </div>
-        <p class="disclaimer">Vault-Tec Assistant is a fan-made project. Fallout® and Vault-Tec® are trademarks of Bethesda Softworks LLC. This bot is not affiliated with Bethesda.</p>
-    </footer>
-
-    <div id="lightbox">
-        <img id="lightbox-img" src="" alt="Full Screen View">
-    </div>
-
-    <script>
-        const API_URL = "/api/stats";
-
-        // Lightbox Logic
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        // Add click event to all carousel images
-        document.querySelectorAll('.carousel-item img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src; // Set lightbox image to clicked image
-                lightbox.style.display = 'flex'; // Show lightbox
-            });
-        });
-
-        // Close lightbox when clicking anywhere on it
-        lightbox.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        // Stats Logic
-        async function fetchStats() {
-            const commandsList = document.getElementById('popular-commands-list');
-            const radioList = document.getElementById('station-popularity-list');
-
-            try {
-                const response = await fetch(API_URL);
-                if (!response.ok) throw new Error("API Offline");
-                const stats = await response.json();
-
-                if (stats.popular_commands && stats.popular_commands.length > 0) {
-                    commandsList.innerHTML = '';
-                    stats.popular_commands.forEach(c => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>/${c.command_name}</strong>: ${c.usage_count} uses`;
-                        commandsList.appendChild(li);
-                    });
-                }
-                if (stats.station_popularity && stats.station_popularity.length > 0) {
-                    radioList.innerHTML = '';
-                    stats.station_popularity.forEach(s => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<strong>${s.station_name}</strong>: ${s.listen_time_str}`;
-                        radioList.appendChild(li);
-                    });
-                }
-            } catch (error) {
-                console.log("Stats API currently unreachable or in dev mode.");
-                const loadCmd = document.getElementById('loading-commands');
-                const loadRad = document.getElementById('loading-radio');
-                if(loadCmd) loadCmd.innerText = ":: DATA LINK OFFLINE ::";
-                if(loadRad) loadRad.innerText = ":: SIGNAL LOST ::";
-            }
-        }
-        document.addEventListener('DOMContentLoaded', fetchStats);
-    </script>
-</body>
-</html>
+<body data-page="home">
+<!-- SITE_HEADER_BEGIN --><a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><div class="container header-inner"><a class="brand" href="index.html" aria-label="Vault-Tec Assistant home"><svg class="brand-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 3 30 7 37 7 40 14 45 19 43 27 43 34 36 38 31 44 24 42 17 44 12 38 5 34 5 27 3 19 8 14 11 7 18 7Z" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="13" stroke="currentColor" stroke-width="2"/><path d="m16 19 8 13 8-13M24 13v5" stroke="currentColor" stroke-width="3"/></svg><span class="brand-name">VAULT-TEC ASSISTANT<small>RESIDENT SERVICES · DISCORD BOT</small></span></a><a class="header-invite" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank" rel="noopener noreferrer">Add to Discord <span aria-hidden="true">↗</span></a><nav class="site-nav" id="site-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Overview</a><a href="commands.html">Commands</a><a href="story.html">Story guide</a><a href="wiki.html">Story wiki</a><a href="https://discord.gg/RQBhmWEzTx" target="_blank" rel="noopener noreferrer">Community ↗</a></nav></div></header><!-- SITE_HEADER_END -->
+<main id="main-content">
+<section class="manual-cover" aria-labelledby="cover-title">
+<div class="cover-top"><span>RESIDENT HANDBOOK</span><span>REVISED OCTOBER 2026</span></div>
+<div class="cover-spread"><div class="cover-copy"><p class="cover-kicker">A HELPFUL COMPANION FOR THE WORLD OUTSIDE.</p><h1 id="cover-title">VAULT-TEC<br>ASSISTANT</h1><p class="cover-description">Fallout radio, survivor life, and an original Chicago story for your Discord server.</p><a class="button" href="https://discord.com/oauth2/authorize?client_id=1107428963246166026" target="_blank" rel="noopener noreferrer">ADD TO YOUR SERVER <span aria-hidden="true">→</span></a><p class="cover-small">Already a resident? <a href="commands.html">Consult the command manual.</a></p></div><figure class="cover-mascot"><img src="assets/assistant.webp" alt="The Vault-Tec Assistant mascot wearing a headset beside a smiling computer" width="620" height="620" fetchpriority="high"></figure></div>
+<div class="cover-bottom"><span>A FAN-MADE FALLOUT DISCORD BOT</span><a href="#orientation">OPEN YOUR HANDBOOK <span aria-hidden="true">↓</span></a></div>
+</section>
+<div class="handbook-body">
+<aside class="contents-slip" aria-label="On this page"><strong>IN THIS HANDBOOK</strong><a href="#orientation">01. Getting started</a><a href="#services">02. Bot services</a><a href="#chicago">03. Chicago campaign</a><a href="#airwaves">04. Activity reports</a></aside>
+<div class="handbook-pages">
+<section class="manual-section" id="orientation"><div class="chapter-title"><span class="chapter-number">01</span><div><p>RESIDENT ORIENTATION</p><h2>Let’s get you settled.</h2></div></div><ol class="instruction-list"><li><div><h3>Add the assistant.</h3><p>Invite the bot to your Discord server. You can also <a href="https://discord.gg/RQBhmWEzTx" target="_blank" rel="noopener noreferrer">join the community</a> for help and updates.</p></div></li><li><div><h3>Open <code>/wasteland</code>.</h3><p>Your Pip-Boy menu holds your survivor profile, daily allowance, exploration, companions, fishing, and radio.</p></div></li><li><div><h3>Pick your first activity.</h3><p>Join a voice channel and select <strong>Radio → Tune Station</strong>, scavenge for supplies, or begin your own story with <code>/campaign</code>.</p></div></li></ol><p class="manual-tip"><strong>RETURNING PLAYER?</strong> Most activities now live inside five menus. The <a href="commands.html">command manual</a> shows every current entry point and where to find things.</p></section>
+<section class="manual-section" id="services"><div class="chapter-title"><span class="chapter-number">02</span><div><p>AVAILABLE SERVICES</p><h2>Your bot at a glance.</h2></div></div><div class="service-index">
+<article class="service-row"><div class="service-title"><span>RADIO & EXPLORATION</span><h3>Out in the wasteland</h3><code>/wasteland</code></div><div><p>Tune into Diamond City, New Vegas, Appalachia, Galaxy News, and more. Scavenge, fish, send expeditions, or recruit a companion.</p><p>Daily contracts, raids, nuke events, and the PvP arena are here too.</p><a href="commands.html?q=wasteland">Read the Wasteland instructions →</a></div></article>
+<article class="service-row"><div class="service-title"><span>PERSONAL EQUIPMENT</span><h3>Pack for the occasion</h3><code>/inventory</code></div><div><p>Use aid items, equip weapons and Power Armor, craft from available recipes, and scrap junk into useful materials.</p><a href="commands.html?q=inventory">Read the inventory instructions →</a></div></article>
+<article class="service-row"><div class="service-title"><span>TRADE & BOTTLECAPS</span><h3>Keep business moving</h3><code>/shop</code></div><div><p>Buy supplies, sell your finds, trade with other survivors, transfer caps, and run your own vending machine.</p><a href="commands.html?q=shop">Read the trading instructions →</a></div></article>
+<article class="service-row"><div class="service-title"><span>HOUSING & COMMUNITY</span><h3>Build a settlement</h3><code>/settlement</code></div><div><p>Found or join a settlement. Manage buildings, collect production, assign companions, organize members, and contest territories.</p><a href="commands.html?q=settlement">Read the settlement instructions →</a></div></article>
+<article class="service-row"><div class="service-title"><span>RECREATION</span><h3>Take a well-earned break</h3><code>/gambling</code></div><div><p>Blackjack, slots, roulette, terminal hacking, lockpicking, a radroach race, and the elusive Perfectly Preserved Pie.</p><a href="commands.html?q=gambling">Read the recreation instructions →</a></div></article>
+</div><div class="help-strip"><strong>Something not working?</strong><span><code>/help</code> opens the in-bot guide. <code>/feedback</code> lets you report a bug or suggest an improvement.</span></div></section>
+<section class="manual-section" id="chicago"><div class="chapter-title"><span class="chapter-number">03</span><div><p>CHICAGO CAMPAIGN</p><h2>The Passage Between</h2></div></div><figure class="campaign-plate"><img src="assets/campaign-south.webp" alt="South Court Exchange, a bustling market beneath Chicago’s industrial skyline" width="1500" height="844" loading="lazy"><figcaption>FIG. 01 · SOUTH COURT EXCHANGE · CAMPAIGN SCENE</figcaption></figure><div class="campaign-intro"><p class="lead">A dispatch bell rings above the market. Somewhere across the city, a courier is waiting. Your route through Chicago begins at South Court.</p><p>Choose Scrapper, Scout, or Fixer and follow six connected acts through markets, waterways, rooftops, and Breakwater Yard. Inspect the scene, negotiate, solve machinery, or take a tactical approach.</p></div><dl class="campaign-facts"><div><dt>START WITH</dt><dd><code>/campaign</code></dd></div><div><dt>STRUCTURE</dt><dd>Six acts + optional districts</dd></div><div><dt>PROGRESS</dt><dd>Private, saved as you play</dd></div></dl><p>Campaign gear and resources are separate from your survivor loadout. Earned survivor rewards transfer only when you explicitly claim them.</p><div class="button-row"><a class="button" href="story.html">READ THE STORY GUIDE →</a><a class="button button-secondary" href="wiki.html">BROWSE THE CAMPAIGN ARCHIVE</a></div></section>
+<section class="manual-section" id="airwaves"><div class="chapter-title"><span class="chapter-number">04</span><div><p>PUBLIC ACTIVITY REPORTS</p><h2>From across the wasteland.</h2></div></div><p>Listening totals and command usage reported by the bot. These records do not indicate the number of players currently online.</p><p class="feed-note" id="stats-status" role="status">Requesting activity report…</p><div class="stats-grid"><div class="stats-panel"><h3>RADIO LISTENING TOTALS</h3><ol id="popular-stations"><li class="stats-placeholder">Requesting station statistics…</li></ol></div><div class="stats-panel"><h3>COMMAND USAGE</h3><ol id="popular-commands"><li class="stats-placeholder">Requesting command statistics…</li></ol></div></div></section>
+</div></div>
+<div class="support-desk"><strong>PLEASE KEEP THIS HANDBOOK HANDY.</strong><p>Need assistance? <a href="https://discord.gg/RQBhmWEzTx" target="_blank" rel="noopener noreferrer">Visit the support server</a> or open <code>/help</code> in Discord.</p></div>
+</main>
+<!-- SITE_FOOTER_BEGIN --><footer class="site-footer"><div class="container"><div class="footer-top"><a class="footer-brand" href="index.html">Vault-Tec Assistant</a><nav class="footer-links" aria-label="Footer"><a href="commands.html">Commands</a><a href="https://discord.gg/RQBhmWEzTx" target="_blank" rel="noopener noreferrer">Support server</a><a href="https://ko-fi.com/im2slothy" target="_blank" rel="noopener noreferrer">Ko-fi</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></div><div class="footer-bottom"><p>A fan project by Im2Slothy. Fallout, Vault-Tec, and related names belong to their respective owners. Not affiliated with or endorsed by Bethesda Softworks or ZeniMax.</p><span>HANDBOOK · OCTOBER 2026</span></div></div></footer><!-- SITE_FOOTER_END -->
+</body></html>

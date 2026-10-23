@@ -1,0 +1,125 @@
+[
+  {
+    "name": "/wasteland",
+    "category": "Explore",
+    "summary": "Your main Pip-Boy: survivor, contracts, exploration, combat, companions, fishing, radio, and utilities.",
+    "details": [
+      "Survivor → My Profile, View Profile, Profile Privacy, Balance, Daily Allowance, Daily Contracts, and Leaderboard. Set your profile public or private; other survivors can only inspect public profiles.",
+      "Survivor → Daily Contracts: up to three eligible assignments from 56 contracts across seven activity types. Gameplay progress is automatic, including actions taken before opening the board. Refresh and claim completed rewards before midnight Eastern Time.",
+      "Contracts include one free replacement of an unfinished assignment per Eastern day, a bonus for claiming all three, and permanent profile ranks. Assigned jobs have 14-day repeat protection; empty slots can remain when no fresh, eligible jobs are available.",
+      "Explore & Fight → Scavenge: search for supplies on a one-hour cooldown. Start Expedition accepts a duration from 1 to 168 hours; use Expedition Status to read its log, Collect Expedition after completion, or Recall Expedition to return early.",
+      "Explore & Fight → Enemy Encounter: choose Easy, Medium, Hard, or Wasteland Boss. Rescue Mission fights slavers for a hostage rescue. Prepare weapons, armor, and aid through /inventory.",
+      "Explore & Fight → Raid Status and Start Raid: inspect or enter the five Gleaming Depths stages—EN06 Guardian, Drill Defense, Epsilon Squad, Vulcan Lab, and Ultracite Terror. Check the in-bot status screen for entry costs and progression.",
+      "Explore & Fight → Nuclear Codes fetches the current launch codes. Launch Nuke consumes a Nuclear Keycard and offers Fissure Site Prime, Monongah Mine, Nuka-World on Tour, or Hawksbill Weather Station.",
+      "PvP Arena → Challenge Survivor, Open Challenge, Find Match, My Duel Record, and Duel Leaderboard. Challenge someone in your channel or queue for a survivor across servers. Optional caps and item stakes are supported; health and radiation carry over.",
+      "Companions → Collection, Equip Companion, and Companion Codex: review recruited allies and affinity, choose your active companion, and inspect the recruitable roster.",
+      "Fishing → Fishing Guide, Clean Fish, and Cast a Line. Choose region, bait, and weather before casting; consult the guide for monthly fish and clean catches into Fish Bits.",
+      "Radio → Tune Station, Disconnect Radio, and Station Stats. Join a voice channel before tuning a station. The picker includes Fallout stations such as Diamond City Radio, Radio New Vegas, Galaxy News Radio, and Appalachia Radio.",
+      "Utilities → Set Reminder, Privacy & Terms, Send Feedback, and What's New / Community. Start campaign is also available directly from the Wasteland screen."
+    ],
+    "keywords": "pip-boy survivor profile privacy balance daily allowance contracts 56 seven types jobs rank scavenge expedition exploration pve rescue raid gleaming depths nuke launch keycard boss duel pvp matchmaking arena leaderboard companion affinity fishing fish bait weather radio station voice reminder community feedback campaign daily scavenge slots terminal"
+  },
+  {
+    "name": "/inventory",
+    "category": "Gear",
+    "summary": "Browse and use items, equip weapons and Power Armor, craft supplies, and scrap junk.",
+    "details": [
+      "Items: browse what you carry, including aid, tools, key items, collectibles, and junk. Select usable aid in this screen to consume it.",
+      "Power Armor: inspect, equip, unequip, or sell your suits. Weapons: inspect, equip, unequip, or sell your weapons.",
+      "Crafting: choose an available recipe and craft in bulk using the required materials.",
+      "Scrap Junk: select junk to break down into Scrap Metal.",
+      "Returning players: /use is a deprecated notice. Item use now lives in /inventory → Items; the former /power_armor, /weapon, /craft, and /scrap commands are menu actions here."
+    ],
+    "keywords": "inventory items gear equipment weapon weapons power armor armour equip unequip aid stimpak radaway rad-x consumable use craft crafting recipes bulk scrap junk scrap metal materials collectible tools fusion core"
+  },
+  {
+    "name": "/shop",
+    "category": "Trading",
+    "summary": "Buy and sell supplies, run a player vendor, trade with survivors, and send bottlecaps.",
+    "details": [
+      "Buy Items: browse the Wasteland Trading Post. Sell Items: select items from your own inventory to exchange for caps.",
+      "My Vendor: add or remove your personal vending listings. Browse Vendors: discover active player vendors. Find a Vendor: open a specific survivor's shop.",
+      "Trade with Player: choose another survivor and build a two-sided trade using items and bottlecaps.",
+      "Send Caps: choose a recipient and enter the bottlecaps to transfer.",
+      "Returning players: the former /sell, /vending, /trade, and /transfer slash commands now live in this menu."
+    ],
+    "keywords": "shop buy sell trade trading exchange caps bottlecaps transfer send caps vending vendor player marketplace trading post economy"
+  },
+  {
+    "name": "/gambling",
+    "category": "Casino",
+    "summary": "Open the Wasteland Casino and choose a game, difficulty, or wager on screen.",
+    "details": [
+      "ROBCO Terminal: start a terminal hacking game on a 30-minute cooldown. Cancel Terminal ends your current session.",
+      "Atomic Slots, Nuka-Cap Flip, Rock Paper Scissors, Blackjack, and Vault Code are available from the picker. Vault Code asks you to crack a three-digit code.",
+      "Lockpicking: select Novice, Advanced, or Expert; bobby pins are used automatically.",
+      "Radroach Race opens a race for community betting. Lucky 38 Roulette lets you build a bet and spin. Port-A-Diner offers a chance at a Perfectly Preserved Pie.",
+      "Set game choices and any wager on the next screen. Bottlecaps are game currency with no real-world value."
+    ],
+    "keywords": "gambling casino robco terminal hacking cancel slots atomic coinflip nuka cap flip rock paper scissors rps blackjack vault code guess lockpick lockpicking bobby pins radroach race roulette lucky 38 preserved pie port-a-diner wager bet caps"
+  },
+  {
+    "name": "/settlement",
+    "category": "Community",
+    "summary": "Found or join a settlement, build its economy, organize members, and contest territories.",
+    "details": [
+      "Found Settlement creates your community. Join by Tag uses an open settlement's four-letter tag. My Settlement and Find Settlement display your own or another survivor's settlement.",
+      "Collect Resources records generated settlement resources. Treasury Transfer deposits or withdraws resources; Manage Buildings builds, upgrades, or demolishes structures.",
+      "Assign Companion, Remove Companion, and Companion Status manage the companions contributed by members.",
+      "Territories opens the shared map, territory assaults, and supplies from held territories. Captured territories generate resources and can stockpile supplies.",
+      "Members, Leaderboard, and Activity Log let you inspect the roster, compare settlements, and review recorded activity. Leaderboard categories include level, AI population, caps treasury, scrap treasury, and territories held.",
+      "Leadership options include Open or Close, Promote Member, Demote Officer, Kick Member, Ban User, Unban User, and Ban List. Settlement roles and ownership determine which actions you can take.",
+      "Leave Settlement exits your membership. Disband Settlement permanently abandons the settlement and requires confirmation."
+    ],
+    "keywords": "settlement create found join four letter tag members leader officer promote demote kick ban unban bans log buildings build upgrade demolish collect resources caps scrap treasury transfer deposit withdraw companion territories territory assault map income supplies leaderboard population leave disband community"
+  },
+  {
+    "name": "/campaign",
+    "category": "Story",
+    "summary": "Start or resume The Passage Between, a private six-act RPG set in Chicago.",
+    "details": [
+      "Run /campaign to begin or resume. The optional action offers Play or resume and Restart story. The Wasteland screen and update welcome also include Start campaign shortcuts.",
+      "Create a campaign character and play with the campaign's own health, equipment, and supplies. Explore Chicago districts, investigate evidence, solve machinery puzzles, make SPECIAL checks, and fight tactical encounters.",
+      "Each act has a district mission to finish before progressing, alongside optional side missions and hidden areas. Use the scene's available choices to travel and act.",
+      "Field map reviews reached locations; Evidence stores recorded clues; Armory changes campaign weapons; People tracks trust. Items, discoveries, and relationships can unlock later options.",
+      "Your story choices save automatically. Pause and return through /campaign whenever you are ready to continue.",
+      "Records shows commendations, rank, titles, and your service-record card. Choose a category, then use Previous commendations and Next commendations to read every page. Claim survivor rewards pays earned caps, items, and profile titles to your regular survivor; each reward can be claimed only once, even across restarts.",
+      "Restart story requests confirmation before clearing campaign choices, clues, and ending. Commendations, titles, and claimed reward records are kept. Your regular survivor's stats, inventory, companions, and settlement remain separate from campaign play.",
+      "After completing a run, a new run opens a veteran's cache. Campaign recognition remains part of your persistent record."
+    ],
+    "keywords": "campaign story the passage between chicago six acts adventure rpg special character build private solo single player exploration district mission side quest hidden areas machinery puzzle tactical combat boss evidence clues map field tools armory people trust records commendation title service record reward survivor reward restart replay veteran cache save resume"
+  },
+  {
+    "name": "/help",
+    "category": "Help",
+    "summary": "Open the interactive guide to the bot's current commands, menu paths, and campaign.",
+    "details": [
+      "Choose Start Here, What's New, Inventory, Shop & Trading, Gambling, Settlements, Wasteland, Chicago Campaign, or Miscellaneous from the guide's category picker.",
+      "The help screen also links the development Discord and offers Send feedback and Daily contracts shortcuts.",
+      "Returning players: gameplay is now organized into five Pip-Boy menus. Use /inventory, /shop, /gambling, /settlement, or /wasteland, then choose the activity from the on-screen controls."
+    ],
+    "keywords": "help guide commands support docs documentation how to start whats new update release returning player migration discord contracts feedback"
+  },
+  {
+    "name": "/feedback",
+    "category": "Help",
+    "summary": "Report a bug or suggest an improvement privately, anonymously or with your Discord name.",
+    "details": [
+      "Choose Bug / issue, Menus / usability, Balance, Feature request, or Other feedback. Add a short summary and details in the form.",
+      "Send anonymously excludes your name, user ID, server details, and message link from the report. The bot temporarily uses your ID for a five-minute spam cooldown; avoid identifying yourself in the text. Anonymous reports cannot receive a personal reply.",
+      "Include my name adds your Discord name, user ID, and server name/ID. A developer may invite you to an optional DM follow-up; text DMs are shared with feedback staff only after you accept, and you can end that conversation.",
+      "Reports go to the developer's feedback channel rather than the server where you opened the form. You can also reach this screen through /wasteland → Utilities → Send Feedback."
+    ],
+    "keywords": "feedback bug report issue suggestion feature request balance usability anonymous named privacy developer support community"
+  },
+  {
+    "name": "/stop",
+    "category": "Help",
+    "summary": "End an optional feedback follow-up conversation in your direct messages with the bot.",
+    "details": [
+      "Use /stop in the bot's DMs to close your feedback conversation and stop sharing further DMs with feedback staff.",
+      "This command is available only in direct messages. You can also use the End conversation button in the follow-up controls."
+    ],
+    "keywords": "stop end close feedback follow-up conversation dm direct messages privacy sharing staff"
+  }
+]
